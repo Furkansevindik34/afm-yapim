@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AFM YAPIM | Sinema • Televizyon • Yapım</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050505;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* MENÜ */
+
+        header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 88px;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(201, 154, 61, 0.25);
+}
+
+
+        .logo-text {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text img {
+    width: 135px;
+    height: auto;
+    display: block;
+}
+
+
+        nav a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    padding-bottom: 8px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: #c99a3d;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #c99a3d;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+        /* ANA ALAN */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            background:
+    linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.65) 45%,
+        rgba(0, 0, 0, 0.9) 100%
+    ),
+    radial-gradient(
+        circle at 50% 40%,
+        rgba(201, 154, 61, 0.18),
+        transparent 55%
+    ),
+    linear-gradient(
+        135deg,
+        #020202 0%,
+        #17120a 50%,
+        #030303 100%
+    );
+
+        }
+
+        .hero-content {
+    max-width: 1000px;
+    position: relative;
+    z-index: 2;
+    animation: heroFade 1.5s ease-out;
+}
+
+
+        .small-title {
+            color: #c99a3d;
+            letter-spacing: 7px;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(60px, 10vw, 130px);
+            letter-spacing: 12px;
+            margin-bottom: 20px;
+        }
+
+        .hero-line {
+            width: 100px;
+            height: 2px;
+            background: #c99a3d;
+            margin: 30px auto;
+        }
+
+        .hero p {
+            color: #cccccc;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 45px;
+            padding: 16px 35px;
+            border: 1px solid #c99a3d;
+            color: #c99a3d;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #c99a3d;
+            color: #050505;
+        }
+
+        /* HAKKIMIZDA */
+
+        .about {
+            padding: 120px 10%;
+            text-align: center;
+            background: #0a0a0a;
+        }
+
+        .section-title {
+            color: #c99a3d;
+            letter-spacing: 5px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .about h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            color: #aaaaaa;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        /* PROJELER */
+
+        .projects {
+            padding: 120px 7%;
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            margin-bottom: 60px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            min-height: 320px;
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-align: left;
+            background:
+                linear-gradient(180deg, transparent 30%, #000000 100%),
+                #151515;
+            border: 1px solid #222222;
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #c99a3d;
+        }
+
+        .project-card span {
+            color: #c99a3d;
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        .project-card h3 {
+            margin-top: 12px;
+            font-family: Georgia, serif;
+            font-size: 28px;
+        }
+
+        /* YÖNETMEN */
+
+        .director {
+            padding: 120px 10%;
+            text-align: center;
+            background: #0a0a0a;
+        }
+
+        .director h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+
+        .director-name {
+            color: #c99a3d;
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+
+        .director p {
+            max-width: 700px;
+            margin: 30px auto 0;
+            color: #aaaaaa;
+            line-height: 1.8;
+        }
+
+        /* İLETİŞİM */
+
+        .contact {
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+
+        .contact p {
+            color: #aaaaaa;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 35px;
+            text-align: center;
+            border-top: 1px solid #222;
+            color: #666666;
+            font-size: 13px;
+        }
+
+        /* TELEFON */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 20px;
+            }
+
+            nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+nav a {
+    margin-left: 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+
+            .logo-text img {
+    width: 115px;
+}
+
+
+            .hero h1 {
+                letter-spacing: 5px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about h2,
+            .projects h2,
+            .director h2,
+            .contact h2 {
+                font-size: 38px;
+            }
+        }
+                @media (max-width: 800px) {
+
+            .director > div {
+                grid-template-columns: 1fr !important;
+            }
+            .contact > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+}
+
+
+            .director img {
+                height: 420px !important;
+            }
+        }
+
+    @keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-text">
+    <img src="images/afm-logo.jpeg" alt="AFM YAPIM">
+</div>
+
+
+        <nav>
+            <a href="#anasayfa">ANA SAYFA</a>
+            <a href="#hakkimizda">HAKKIMIZDA</a>
+            <a href="#projeler">PROJELER</a>
+            <a href="#yonetmen">YÖNETMEN</a>
+            <a href="#iletisim">İLETİŞİM</a>
+        </nav>
+    </header>
+
+
+    <section class="hero" id="anasayfa">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                1996'DAN BERİ
+            </div>
+
+            <h1>AFM YAPIM</h1>
+
+            <div class="hero-line"></div>
+
+            <p>SİNEMA • TELEVİZYON • YAPIM</p>
+
+            <a href="#projeler" class="button">
+                PROJELERİ KEŞFET
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="about" id="hakkimizda">
+
+        <div class="section-title">BİZ KİMİZ?</div>
+
+        <h2>Hikâyeleri Beyaz Perdeye Taşıyoruz</h2>
+
+        <p>
+            1996'dan beri sinema ve televizyon dünyasında üretmeye devam eden
+            AFM YAPIM, yaratıcı vizyonu ve yapım deneyimiyle güçlü hikâyeleri
+            izleyiciyle buluşturuyor.
+        </p>
+
+    </section>
+
+
+    <section class="projects" id="projeler">
+
+        <div class="section-title">SEÇKİLER</div>
+
+        <h2>Projeler</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+  <div class="project-card" style="
+    position: relative;
+    overflow: hidden;
+    min-height: 430px;
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(201,154,61,0.22),
+            transparent 40%
+        ),
+        linear-gradient(
+            160deg,
+            #1a1408,
+            #050505 70%
+        );
+">
+
+    <div style="
+        position:absolute;
+        top:25px;
+        right:25px;
+        color:#c99a3d;
+        font-size:11px;
+        letter-spacing:3px;
+    ">
+        AFM YAPIM
+    </div>
+
+    <div style="
+        margin-bottom:auto;
+        padding-top:35px;
+    ">
+
+        <div style="
+            color:#c99a3d;
+            font-size:11px;
+            letter-spacing:4px;
+        ">
+            2026 • SİNEMA FİLMİ
+        </div>
+
+        <div style="
+            width:55px;
+            height:1px;
+            background:#c99a3d;
+            margin-top:25px;
+        "></div>
+
+    </div>
+
+    <h3 style="
+        font-family:Georgia, serif;
+        font-size:34px;
+        letter-spacing:2px;
+    ">
+        Çapkınlar Oteli
+    </h3>
+
+    <p style="
+        color:#aaa;
+        line-height:1.7;
+        margin-top:15px;
+    ">
+        Alanya'da geçen, yanlış anlamalar,
+        kıskançlıklar ve giderek büyüyen
+        bir komedi hikâyesi.
+    </p>
+
+    <p style="
+        color:#c99a3d;
+        margin-top:18px;
+        font-size:13px;
+    ">
+        Yönetmen: Alaattin Durmaz
+    </p>
+
+    <a href="#capkinlar"
+       class="button"
+       style="
+           margin-top:25px;
+           align-self:flex-start;
+       ">
+        FİLM DETAYLARI
+    </a>
+
+</div>
+
+</div>
+
+
+    <div class="project-card">
+        <span>YAKINDA</span>
+
+        <h3>Burası Cezaevi</h3>
+
+        <p style="color: #aaaaaa; line-height: 1.6; margin-top: 15px;">
+            AFM Yapım bünyesinde geliştirilen yeni dizi projesi.
+        </p>
+
+        <p style="color: #c99a3d; margin-top: 15px;">
+            Yönetmen: Alaattin Durmaz
+        </p>
+    </div>
+
+    <div class="project-card">
+        <span>YENİ PROJE</span>
+
+        <h3>Yakında</h3>
+
+        <p style="color: #aaaaaa; line-height: 1.6; margin-top: 15px;">
+            Yeni AFM YAPIM projeleri çok yakında.
+        </p>
+    </div>
+
+</div>
+
+
+    </section>
+<section class="about" id="capkinlar">
+
+    <div class="section-title">AFM YAPIM SUNAR</div>
+
+    <h2 style="
+        font-family: Georgia, serif;
+        font-size: clamp(42px, 6vw, 72px);
+        margin-bottom: 15px;
+    ">
+        Çapkınlar Oteli
+    </h2>
+
+    <div style="
+        color: #c99a3d;
+        letter-spacing: 4px;
+        font-size: 12px;
+        margin-bottom: 50px;
+    ">
+        2026 • SİNEMA FİLMİ • KOMEDİ
+    </div>
+
+
+    <!-- FİLM GÖRSELİ İÇİN ALAN -->
+
+    <div style="
+        max-width: 850px;
+        height: 420px;
+        margin: 0 auto 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid #333;
+        background:
+            radial-gradient(
+                circle at center,
+                rgba(201,154,61,0.18),
+                transparent 55%
+            ),
+            linear-gradient(
+                135deg,
+                #17120a,
+                #050505
+            );
+    ">
+
+        <div>
+
+            <div style="
+                color: #c99a3d;
+                font-size: 11px;
+                letter-spacing: 5px;
+                margin-bottom: 20px;
+            ">
+                AFM YAPIM
+            </div>
+
+            <div style="
+                font-family: Georgia, serif;
+                font-size: 38px;
+                letter-spacing: 3px;
+            ">
+                ÇAPKINLAR OTELİ
+            </div>
+
+            <div style="
+                width: 60px;
+                height: 1px;
+                background: #c99a3d;
+                margin: 25px auto;
+            "></div>
+
+            <div style="
+                color: #777;
+                font-size: 12px;
+                letter-spacing: 2px;
+            ">
+                FİLM GÖRSELİ YAKINDA
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FİLM BİLGİLERİ -->
+
+    <div style="
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    ">
+
+        <div style="padding: 30px 15px;">
+            <div style="
+                color: #c99a3d;
+                font-size: 11px;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            ">
+                YÖNETMEN
+            </div>
+
+            <div>
+                Alaattin Durmaz
+            </div>
+        </div>
+
+
+        <div style="padding: 30px 15px;">
+            <div style="
+                color: #c99a3d;
+                font-size: 11px;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            ">
+                GÖRÜNTÜ YÖNETMENİ
+            </div>
+
+            <div>
+                Mehmet Elçi
+            </div>
+        </div>
+
+
+        <div style="padding: 30px 15px;">
+            <div style="
+                color: #c99a3d;
+                font-size: 11px;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            ">
+                TÜR
+            </div>
+
+            <div>
+                Komedi
+            </div>
+        </div>
+
+
+        <div style="padding: 30px 15px;">
+            <div style="
+                color: #c99a3d;
+                font-size: 11px;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            ">
+                ÇEKİM YERİ
+            </div>
+
+            <div>
+                Alanya
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- HİKÂYE -->
+
+    <div style="
+        max-width: 750px;
+        margin: 70px auto 0;
+        text-align: left;
+    ">
+
+        <div class="section-title">
+            FİLM HAKKINDA
+        </div>
+
+        <h3 style="
+            font-family: Georgia, serif;
+            font-size: 34px;
+            margin-bottom: 25px;
+        ">
+            Hikâye
+        </h3>
+
+        <p style="
+            color: #aaa;
+            line-height: 2;
+        ">
+            Alanya'nın sıcak atmosferinde geçen Çapkınlar Oteli,
+            yanlış anlamalar, kıskançlıklar ve giderek büyüyen
+            olaylar üzerinden ilerleyen bir komedi hikâyesidir.
+        </p>
+
+        <p style="
+            color: #aaa;
+            line-height: 2;
+            margin-top: 20px;
+        ">
+            AFM YAPIM tarafından hazırlanan film, seyirciyi
+            eğlenceli ve hareketli bir otel atmosferinin içine
+            davet ediyor.
+        </p>
+
+    </div>
+
+
+    <!-- EKİP -->
+
+    <div style="
+        max-width: 750px;
+        margin: 70px auto 0;
+        text-align: left;
+    ">
+
+        <div class="section-title">
+            FİLM EKİBİ
+        </div>
+
+        <h3 style="
+            font-family: Georgia, serif;
+            font-size: 34px;
+            margin-bottom: 25px;
+        ">
+            Teknik Ekip
+        </h3>
+
+        <p style="
+            color: #aaa;
+            line-height: 2;
+        ">
+            <strong style="color:#c99a3d;">
+                Yönetmen:
+            </strong>
+            Alaattin Durmaz
+        </p>
+
+        <p style="
+            color: #aaa;
+            line-height: 2;
+        ">
+            <strong style="color:#c99a3d;">
+                Görüntü Yönetmeni:
+            </strong>
+            Mehmet Elçi
+        </p>
+
+        <p style="
+            color: #aaa;
+            line-height: 2;
+        ">
+            <strong style="color:#c99a3d;">
+                Yapım:
+            </strong>
+            AFM YAPIM
+        </p>
+
+    </div>
+
+</section>
+
+    <section class="director" id="yonetmen">
+
+    <div class="section-title">YARATICI VİZYON</div>
+
+    <div style="
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 60px;
+        align-items: center;
+        text-align: left;
+    ">
+
+        <!-- ALAATTİN DURMAZ FOTOĞRAFI -->
+
+        <div style="
+            overflow: hidden;
+            border: 1px solid #c99a3d;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            background: #111;
+        ">
+
+            <img
+                src="images/alaattin-durmaz.jpg.jpeg"
+                alt="Alaattin Durmaz"
+                style="
+                    width: 100%;
+                    height: 520px;
+                    object-fit: cover;
+                    display: block;
+                "
+            >
+
+        </div>
+
+
+        <!-- BİYOGRAFİ -->
+
+        <div>
+
+            <div class="section-title">
+                YÖNETMEN • YAPIMCI
+            </div>
+
+            <h2 style="
+                font-family: Georgia, serif;
+                font-size: 52px;
+                margin-bottom: 20px;
+            ">
+                Alaattin Durmaz
+            </h2>
+
+            <div class="director-name">
+                AFM YAPIM
+            </div>
+
+            <p style="
+                color: #aaa;
+                line-height: 1.9;
+                margin-top: 30px;
+            ">
+                Alaattin Durmaz, sinema sektörüne 1978 yılında,
+                henüz 11 yaşındayken adım atan; Yeşilçam'ın kamera,
+                stüdyo, dublaj ve kurgu süreçlerinden yetişerek
+                yapımcılık ve yönetmenliğe uzanan uzun soluklu
+                bir sinema emekçisidir.
+            </p>
+
+            <p style="
+                color: #aaa;
+                line-height: 1.9;
+                margin-top: 20px;
+            ">
+                Kariyerinin ilk dönemlerinde stüdyo makinistliği,
+                dublaj ve kamera alanlarında görev alan Durmaz,
+                Türk sinemasının teknik süreçlerinde deneyim
+                kazanarak sinema dünyasının farklı alanlarında
+                çalışmalarını sürdürdü.
+            </p>
+
+            <p style="
+                color: #aaa;
+                line-height: 1.9;
+                margin-top: 20px;
+            ">
+                İlerleyen yıllarda televizyon ve yapım alanlarına
+                yönelen Durmaz, AFM YAPIM çatısı altında sinema,
+                televizyon ve yeni projeler üretmeye devam ediyor.
+            </p>
+
+            <div style="
+                margin-top: 35px;
+                padding-top: 25px;
+                border-top: 1px solid #333;
+            ">
+
+                <span style="
+                    color: #c99a3d;
+                    letter-spacing: 2px;
+                    font-size: 12px;
+                ">
+                    ÖNE ÇIKAN PROJE
+                </span>
+
+                <h3 style="
+                    font-family: Georgia, serif;
+                    font-size: 28px;
+                    margin-top: 10px;
+                ">
+                    Çapkınlar Oteli
+                </h3>
+
+                <p style="
+                    color: #777;
+                    margin-top: 8px;
+                ">
+                    Yönetmen
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+    <section class="contact" id="iletisim">
+
+    <div class="section-title">BİZE ULAŞIN</div>
+
+    <h2>İletişim</h2>
+
+    <p style="
+        max-width: 650px;
+        margin: 0 auto 50px;
+        color: #999;
+        line-height: 1.8;
+    ">
+        Yeni projeler, yapım iş birlikleri ve iletişim talepleriniz
+        için AFM YAPIM ile iletişime geçebilirsiniz.
+    </p>
+
+    <div style="
+        max-width: 900px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    ">
+
+        <!-- TELEFON -->
+
+        <div style="
+            padding: 35px 20px;
+            border: 1px solid #252525;
+            background: #0b0b0b;
+            transition: 0.3s;
+        ">
+
+            <div style="
+                color: #c99a3d;
+                font-size: 12px;
+                letter-spacing: 3px;
+                margin-bottom: 18px;
+            ">
+                TELEFON
+            </div>
+
+            <div style="color: #aaa;">
+                Yakında eklenecek
+            </div>
+
+        </div>
+
+
+        <!-- E-POSTA -->
+
+        <div style="
+            padding: 35px 20px;
+            border: 1px solid #252525;
+            background: #0b0b0b;
+            transition: 0.3s;
+        ">
+
+            <div style="
+                color: #c99a3d;
+                font-size: 12px;
+                letter-spacing: 3px;
+                margin-bottom: 18px;
+            ">
+                E-POSTA
+            </div>
+
+            <div style="color: #aaa;">
+                Yakında eklenecek
+            </div>
+
+        </div>
+
+
+        <!-- ADRES -->
+
+        <div style="
+            padding: 35px 20px;
+            border: 1px solid #252525;
+            background: #0b0b0b;
+            transition: 0.3s;
+        ">
+
+            <div style="
+                color: #c99a3d;
+                font-size: 12px;
+                letter-spacing: 3px;
+                margin-bottom: 18px;
+            ">
+                ADRES
+            </div>
+
+            <div style="color: #aaa;">
+                Yakında eklenecek
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <footer>
+        © 2026 AFM YAPIM — Tüm Hakları Saklıdır.
+    </footer>
+
+</body>
+</html>
