@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AFM YAPIM | Sinema • Televizyon • Yapım</title>
+<title>AFM YAPIM | Sinema • Televizyon • Yapım</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* =========================================================
+   TEMEL
+========================================================= */
 
-        body {
-            background: #050505;
-            color: #ffffff;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+:root {
+    --gold: #c99a3d;
+    --gold-light: #e0b75d;
+    --black: #050505;
+    --dark: #0a0a0a;
+    --dark-2: #111111;
+    --gray: #aaa;
+    --border: rgba(255,255,255,.10);
+}
 
-        /* MENÜ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header {
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--black);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -36,15 +65,18 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.82);
+
+    background: rgba(0,0,0,.84);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(201, 154, 61, 0.25);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(201,154,61,.25);
 }
 
-
-        .logo-text {
+.logo-text {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .logo-text img {
@@ -53,16 +85,22 @@
     display: block;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+}
 
-        nav a {
+nav a {
     position: relative;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     margin-left: 28px;
+    padding-bottom: 8px;
+
     font-size: 12px;
     letter-spacing: 2px;
-    transition: 0.3s;
-    padding-bottom: 8px;
+
+    transition: .3s ease;
 }
 
 nav a::after {
@@ -70,295 +108,841 @@ nav a::after {
     position: absolute;
     left: 0;
     bottom: 0;
+
     width: 0;
     height: 1px;
-    background: #c99a3d;
-    transition: 0.3s;
+
+    background: var(--gold);
+
+    transition: .3s ease;
 }
 
-nav a:hover {
-    color: #c99a3d;
+nav a:hover,
+nav a.active {
+    color: var(--gold);
 }
 
-nav a:hover::after {
+nav a:hover::after,
+nav a.active::after {
     width: 100%;
 }
 
 
-        /* ANA ALAN */
+/* =========================================================
+   GENEL
+========================================================= */
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 120px 20px 80px;
-            background:
-    linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.95) 0%,
-        rgba(0, 0, 0, 0.65) 45%,
-        rgba(0, 0, 0, 0.9) 100%
-    ),
-    radial-gradient(
-        circle at 50% 40%,
-        rgba(201, 154, 61, 0.18),
-        transparent 55%
-    ),
-    linear-gradient(
-        135deg,
-        #020202 0%,
-        #17120a 50%,
-        #030303 100%
-    );
+.section-title {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
 
-        }
+.section-heading {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.15;
+}
 
-        .hero-content {
+.button {
+    display: inline-block;
+
+    margin-top: 35px;
+    padding: 15px 32px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+
+    transition: .35s ease;
+}
+
+.button:hover {
+    background: var(--gold);
+    color: #050505;
+    box-shadow: 0 10px 35px rgba(201,154,61,.18);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 130px 20px 80px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(201,154,61,.18),
+            transparent 50%
+        ),
+        linear-gradient(
+            135deg,
+            #020202 0%,
+            #17120a 50%,
+            #030303 100%
+        );
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.92)
+        );
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,.015) 0,
+            rgba(255,255,255,.015) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    opacity: .25;
+    pointer-events: none;
+}
+
+.hero-content {
     max-width: 1000px;
     position: relative;
     z-index: 2;
-    animation: heroFade 1.5s ease-out;
+
+    animation: heroFade 1.4s ease-out;
+}
+
+.small-title {
+    color: var(--gold);
+    letter-spacing: 7px;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 10vw, 130px);
+    letter-spacing: clamp(4px, 1vw, 12px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.hero-line {
+    width: 100px;
+    height: 2px;
+
+    background: var(--gold);
+
+    margin: 30px auto;
+}
+
+.hero p {
+    color: #ccc;
+    font-size: clamp(14px, 2vw, 20px);
+    letter-spacing: 2px;
 }
 
 
-        .small-title {
-            color: #c99a3d;
-            letter-spacing: 7px;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
+/* =========================================================
+   HAKKIMIZDA
+========================================================= */
 
-        .hero h1 {
-            font-family: Georgia, serif;
-            font-size: clamp(60px, 10vw, 130px);
-            letter-spacing: 12px;
-            margin-bottom: 20px;
-        }
+.about {
+    padding: 120px 8%;
+    text-align: center;
+    background: var(--dark);
+}
 
-        .hero-line {
-            width: 100px;
-            height: 2px;
-            background: #c99a3d;
-            margin: 30px auto;
-        }
+.about-content {
+    max-width: 850px;
+    margin: auto;
+}
 
-        .hero p {
-            color: #cccccc;
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
+.about p {
+    max-width: 800px;
+    margin: 30px auto 0;
 
-        .button {
-            display: inline-block;
-            margin-top: 45px;
-            padding: 16px 35px;
-            border: 1px solid #c99a3d;
-            color: #c99a3d;
-            text-decoration: none;
-            letter-spacing: 3px;
-            font-size: 13px;
-            transition: 0.3s;
-        }
+    color: #aaa;
+    line-height: 1.9;
+    font-size: 17px;
+}
 
-        .button:hover {
-            background: #c99a3d;
-            color: #050505;
-        }
 
-        /* HAKKIMIZDA */
+/* =========================================================
+   PROJELER
+========================================================= */
 
-        .about {
-            padding: 120px 10%;
-            text-align: center;
-            background: #0a0a0a;
-        }
+.projects {
+    padding: 120px 7%;
+    text-align: center;
+    background: var(--black);
+}
 
-        .section-title {
-            color: #c99a3d;
-            letter-spacing: 5px;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
+.projects-header {
+    margin-bottom: 60px;
+}
 
-        .about h2 {
-            font-family: Georgia, serif;
-            font-size: 48px;
-            margin-bottom: 30px;
-        }
+.project-grid {
+    max-width: 1250px;
+    margin: auto;
 
-        .about p {
-            max-width: 800px;
-            margin: auto;
-            color: #aaaaaa;
-            line-height: 1.9;
-            font-size: 17px;
-        }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
 
-        /* PROJELER */
+.project-card {
+    position: relative;
+    min-height: 360px;
 
-        .projects {
-            padding: 120px 7%;
-            text-align: center;
-        }
+    padding: 38px 28px;
 
-        .projects h2 {
-            font-family: Georgia, serif;
-            font-size: 48px;
-            margin-bottom: 60px;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .project-card {
-            min-height: 320px;
-            padding: 40px 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            text-align: left;
-            background:
-                linear-gradient(180deg, transparent 30%, #000000 100%),
-                #151515;
-            border: 1px solid #222222;
-            transition: 0.4s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: #c99a3d;
-        }
-
-        .project-card span {
-            color: #c99a3d;
-            font-size: 12px;
-            letter-spacing: 3px;
-        }
-
-        .project-card h3 {
-            margin-top: 12px;
-            font-family: Georgia, serif;
-            font-size: 28px;
-        }
-
-        /* YÖNETMEN */
-
-        .director {
-            padding: 120px 10%;
-            text-align: center;
-            background: #0a0a0a;
-        }
-
-        .director h2 {
-            font-family: Georgia, serif;
-            font-size: 48px;
-            margin-bottom: 25px;
-        }
-
-        .director-name {
-            color: #c99a3d;
-            font-size: 24px;
-            letter-spacing: 3px;
-        }
-
-        .director p {
-            max-width: 700px;
-            margin: 30px auto 0;
-            color: #aaaaaa;
-            line-height: 1.8;
-        }
-
-        /* İLETİŞİM */
-
-        .contact {
-            padding: 120px 20px;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-family: Georgia, serif;
-            font-size: 48px;
-            margin-bottom: 25px;
-        }
-
-        .contact p {
-            color: #aaaaaa;
-            margin-bottom: 10px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            padding: 35px;
-            text-align: center;
-            border-top: 1px solid #222;
-            color: #666666;
-            font-size: 13px;
-        }
-
-        /* TELEFON */
-
-        @media (max-width: 800px) {
-
-            header {
-                padding: 20px;
-            }
-
-            nav {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: flex-end;
-    gap: 10px;
+
+    text-align: left;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(201,154,61,.12),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #17130b,
+            #050505
+        );
+
+    border: 1px solid #252525;
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
 }
 
-nav a {
-    margin-left: 10px;
-    font-size: 10px;
-    letter-spacing: 1px;
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 25%,
+            rgba(0,0,0,.9) 100%
+        );
+
+    pointer-events: none;
+}
+
+.project-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 50px rgba(0,0,0,.45);
+}
+
+.project-card .project-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: auto;
+}
+
+.project-card h3 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.project-card p {
+    color: #aaa;
+    line-height: 1.7;
+    margin-top: 14px;
+}
+
+.project-card .director-label {
+    color: var(--gold);
+    font-size: 13px;
+    margin-top: 16px;
 }
 
 
-            .logo-text img {
-    width: 115px;
+/* =========================================================
+   ÇAPKINLAR OTELİ
+========================================================= */
+
+.movie-section {
+    padding: 130px 7%;
+    background: var(--dark);
+    text-align: center;
+}
+
+.poster-small {
+    max-width: 500px;
+    margin: 35px auto 50px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--gold);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.7);
+}
+
+.poster-small img {
+    width: 100%;
+    display: block;
+}
+
+.movie-meta {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 60px;
+}
+
+.movie-banner {
+    position: relative;
+
+    max-width: 1000px;
+    height: 560px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border: 1px solid var(--gold);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.75);
+}
+
+.movie-banner img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+}
+
+.movie-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.05) 15%,
+            rgba(0,0,0,.2) 45%,
+            rgba(0,0,0,.95) 100%
+        );
+}
+
+.movie-banner-content {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 45px 30px;
+
+    text-align: center;
+}
+
+.movie-banner-small {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.movie-banner-title {
+    font-family: Georgia, serif;
+
+    font-size: clamp(34px, 6vw, 60px);
+    letter-spacing: 4px;
+
+    text-shadow: 0 4px 20px rgba(0,0,0,.8);
+}
+
+.movie-divider {
+    width: 70px;
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 20px auto;
+}
+
+.movie-banner-info {
+    color: #ddd;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.movie-director {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-top: 12px;
 }
 
 
-            .hero h1 {
-                letter-spacing: 5px;
-            }
+/* =========================================================
+   FİLM BİLGİLERİ
+========================================================= */
 
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
+.movie-info-grid {
+    max-width: 1000px;
 
-            .about h2,
-            .projects h2,
-            .director h2,
-            .contact h2 {
-                font-size: 38px;
-            }
-        }
-                @media (max-width: 800px) {
+    margin: 70px auto 0;
 
-            .director > div {
-                grid-template-columns: 1fr !important;
-            }
-            .contact > div[style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.movie-info-item {
+    padding: 30px 15px;
+}
+
+.movie-info-label {
+    color: var(--gold);
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.movie-story,
+.movie-team {
+    max-width: 750px;
+    margin: 70px auto 0;
+
+    text-align: left;
+}
+
+.movie-story h3,
+.movie-team h3 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+
+    margin-bottom: 25px;
+}
+
+.movie-story p,
+.movie-team p {
+    color: #aaa;
+    line-height: 2;
+}
+
+.movie-team p {
+    margin-bottom: 5px;
+}
+
+.gold {
+    color: var(--gold);
 }
 
 
-            .director img {
-                height: 420px !important;
-            }
-        }
+/* =========================================================
+   GALERİ
+========================================================= */
 
-    @keyframes heroFade {
+.gallery-section {
+    padding: 120px 7%;
+    background: #050505;
+    text-align: center;
+}
+
+.gallery-description {
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+
+    color: #888;
+    line-height: 1.8;
+}
+
+.gallery-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #222;
+    background: #111;
+
+    cursor: pointer;
+}
+
+.gallery-item::after {
+    content: "BÜYÜT";
+
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,.5);
+
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    opacity: 0;
+
+    transition: .3s;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 360px;
+
+    object-fit: cover;
+    display: block;
+
+    transition: transform .5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   YÖNETMEN
+========================================================= */
+
+.director {
+    padding: 130px 8%;
+    background: var(--dark);
+}
+
+.director-grid {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.director-photo {
+    overflow: hidden;
+
+    border: 1px solid var(--gold);
+
+    background: #111;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.6);
+}
+
+.director-photo img {
+    width: 100%;
+    height: 520px;
+
+    object-fit: cover;
+    display: block;
+}
+
+.director-name {
+    color: var(--gold);
+
+    font-size: 23px;
+    letter-spacing: 3px;
+
+    margin-top: 10px;
+}
+
+.director-text {
+    color: #aaa;
+    line-height: 1.9;
+
+    margin-top: 25px;
+}
+
+.director-highlight {
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #333;
+}
+
+.director-highlight span {
+    color: var(--gold);
+
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.director-highlight h3 {
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    margin-top: 10px;
+}
+
+.director-highlight p {
+    color: #777;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   İLETİŞİM
+========================================================= */
+
+.contact {
+    padding: 120px 7%;
+    text-align: center;
+    background: var(--black);
+}
+
+.contact-description {
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+
+    color: #999;
+    line-height: 1.8;
+}
+
+.contact-grid {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.contact-card {
+    padding: 35px 20px;
+
+    border: 1px solid #252525;
+
+    background: #0b0b0b;
+
+    transition: .3s;
+}
+
+.contact-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.contact-title {
+    color: var(--gold);
+
+    font-size: 12px;
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+.contact-value {
+    color: #aaa;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 35px;
+
+    text-align: center;
+
+    border-top: 1px solid #222;
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   GALERİ MODAL
+========================================================= */
+
+.gallery-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(0,0,0,.95);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+}
+
+.gallery-modal.show {
+    display: flex;
+}
+
+.gallery-modal-image {
+    max-width: 90%;
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border: 1px solid var(--gold);
+
+    box-shadow:
+        0 20px 80px rgba(0,0,0,.8);
+
+    animation: galleryFade .25s ease;
+}
+
+.gallery-close,
+.gallery-prev,
+.gallery-next {
+    position: absolute;
+
+    z-index: 10001;
+
+    border: 1px solid var(--gold);
+
+    background: rgba(0,0,0,.6);
+
+    color: var(--gold);
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.gallery-close:hover,
+.gallery-prev:hover,
+.gallery-next:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+.gallery-close {
+    top: 25px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    font-size: 28px;
+}
+
+.gallery-prev,
+.gallery-next {
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    font-size: 30px;
+}
+
+.gallery-prev {
+    left: 25px;
+}
+
+.gallery-next {
+    right: 25px;
+}
+
+.gallery-counter {
+    position: absolute;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #aaa;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   ANİMASYON
+========================================================= */
+
+@keyframes heroFade {
     from {
         opacity: 0;
         transform: translateY(25px);
@@ -370,409 +954,590 @@ nav a {
     }
 }
 
-    </style>
+@keyframes galleryFade {
+    from {
+        opacity: 0;
+        transform: scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 15px 4%;
+    }
+
+    nav a {
+        margin-left: 15px;
+        font-size: 10px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .movie-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .director-grid {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}
+
+
+/* =========================================================
+   TELEFON
+========================================================= */
+
+@media (max-width: 650px) {
+
+    html {
+        scroll-padding-top: 125px;
+    }
+
+    header {
+        height: auto;
+        min-height: 90px;
+
+        padding: 12px 18px;
+
+        gap: 12px;
+        align-items: center;
+    }
+
+    .logo-text img {
+        width: 105px;
+    }
+
+    nav {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        gap: 4px 8px;
+    }
+
+    nav a {
+        margin-left: 0;
+
+        font-size: 8px;
+        letter-spacing: 1px;
+
+        padding-bottom: 4px;
+    }
+
+    .hero {
+        padding-top: 140px;
+    }
+
+    .small-title {
+        font-size: 10px;
+        letter-spacing: 4px;
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 14vw, 75px);
+    }
+
+    .hero p {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .button {
+        padding: 13px 22px;
+        font-size: 10px;
+    }
+
+    .about,
+    .projects,
+    .movie-section,
+    .gallery-section,
+    .director,
+    .contact {
+        padding: 85px 20px;
+    }
+
+    .movie-banner {
+        height: 420px;
+    }
+
+    .movie-banner-content {
+        padding: 25px 15px;
+    }
+
+    .movie-banner-title {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .movie-banner-info {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .movie-info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .movie-info-item {
+        padding: 22px 10px;
+    }
+
+    .movie-story,
+    .movie-team {
+        margin-top: 50px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 390px;
+    }
+
+    .director-grid {
+        gap: 40px;
+    }
+
+    .director-photo img {
+        height: 430px;
+    }
+
+    .gallery-modal {
+        padding: 20px;
+    }
+
+    .gallery-modal-image {
+        max-width: 95%;
+        max-height: 75vh;
+    }
+
+    .gallery-prev,
+    .gallery-next {
+        width: 42px;
+        height: 42px;
+
+        font-size: 23px;
+    }
+
+    .gallery-prev {
+        left: 10px;
+    }
+
+    .gallery-next {
+        right: 10px;
+    }
+
+    .gallery-close {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+
+/* =========================================================
+   ÇOK KÜÇÜK EKRAN
+========================================================= */
+
+@media (max-width: 420px) {
+
+    header {
+        align-items: flex-start;
+    }
+
+    .logo-text img {
+        width: 90px;
+    }
+
+    nav {
+        max-width: 220px;
+    }
+
+    nav a {
+        font-size: 7px;
+    }
+
+    .movie-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 330px;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <header>
-        <div class="logo-text">
-    <img src="images/afm-logo.jpeg" alt="AFM YAPIM">
-</div>
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
+<header>
+
+    <div class="logo-text">
+        <img
+            src="images/afm-logo.jpeg"
+            alt="AFM YAPIM"
+        >
+    </div>
+
+    <nav>
+
+        <a href="#anasayfa" class="active">
+            ANA SAYFA
+        </a>
+
+        <a href="#hakkimizda">
+            HAKKIMIZDA
+        </a>
+
+        <a href="#projeler">
+            PROJELER
+        </a>
+
+        <a href="#yonetmen">
+            YÖNETMEN
+        </a>
+
+        <a href="#iletisim">
+            İLETİŞİM
+        </a>
+
+    </nav>
+
+</header>
 
 
-        <nav>
-            <a href="#anasayfa">ANA SAYFA</a>
-            <a href="#hakkimizda">HAKKIMIZDA</a>
-            <a href="#projeler">PROJELER</a>
-            <a href="#yonetmen">YÖNETMEN</a>
-            <a href="#iletisim">İLETİŞİM</a>
-        </nav>
-    </header>
 
+<!-- ======================================================
+     HERO
+====================================================== -->
 
-    <section class="hero" id="anasayfa">
+<section
+    class="hero"
+    id="anasayfa"
+>
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <div class="small-title">
-                1996'DAN BERİ
-            </div>
-
-            <h1>AFM YAPIM</h1>
-
-            <div class="hero-line"></div>
-
-            <p>SİNEMA • TELEVİZYON • YAPIM</p>
-
-            <a href="#projeler" class="button">
-                PROJELERİ KEŞFET
-            </a>
-
+        <div class="small-title">
+            1996'DAN BERİ
         </div>
 
-    </section>
+        <h1>
+            AFM YAPIM
+        </h1>
 
-
-    <section class="about" id="hakkimizda">
-
-        <div class="section-title">BİZ KİMİZ?</div>
-
-        <h2>Hikâyeleri Beyaz Perdeye Taşıyoruz</h2>
+        <div class="hero-line"></div>
 
         <p>
-            1996'dan beri sinema ve televizyon dünyasında üretmeye devam eden
-            AFM YAPIM, yaratıcı vizyonu ve yapım deneyimiyle güçlü hikâyeleri
-            izleyiciyle buluşturuyor.
+            SİNEMA • TELEVİZYON • YAPIM
         </p>
 
-    </section>
+        <a
+            href="#projeler"
+            class="button"
+        >
+            PROJELERİ KEŞFET
+        </a>
 
-
-    <section class="projects" id="projeler">
-
-        <div class="section-title">SEÇKİLER</div>
-
-        <h2>Projeler</h2>
-
-<div class="project-grid">
-
-<div class="project-card">
-  <div class="project-card" style="
-    position: relative;
-    overflow: hidden;
-    min-height: 430px;
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(201,154,61,0.22),
-            transparent 40%
-        ),
-        linear-gradient(
-            160deg,
-            #1a1408,
-            #050505 70%
-        );
-">
-
-    <div style="
-        position:absolute;
-        top:25px;
-        right:25px;
-        color:#c99a3d;
-        font-size:11px;
-        letter-spacing:3px;
-    ">
-        AFM YAPIM
     </div>
 
-    <div style="
-        margin-bottom:auto;
-        padding-top:35px;
-    ">
+</section>
 
-        <div style="
-            color:#c99a3d;
-            font-size:11px;
-            letter-spacing:4px;
-        ">
-            2026 • SİNEMA FİLMİ
+
+
+<!-- ======================================================
+     HAKKIMIZDA
+====================================================== -->
+
+<section
+    class="about"
+    id="hakkimizda"
+>
+
+    <div class="about-content">
+
+        <div class="section-title">
+            BİZ KİMİZ?
         </div>
 
-        <div style="
-            width:55px;
-            height:1px;
-            background:#c99a3d;
-            margin-top:25px;
-        "></div>
+        <h2 class="section-heading">
+            Hikâyeleri Beyaz Perdeye Taşıyoruz
+        </h2>
+
+        <p>
+            1996'dan beri sinema ve televizyon dünyasında
+            üretmeye devam eden AFM YAPIM, yaratıcı vizyonu
+            ve yapım deneyimiyle güçlü hikâyeleri izleyiciyle
+            buluşturuyor.
+        </p>
 
     </div>
 
-    <h3 style="
-        font-family:Georgia, serif;
-        font-size:34px;
-        letter-spacing:2px;
-    ">
-        Çapkınlar Oteli
-    </h3>
-
-    <p style="
-        color:#aaa;
-        line-height:1.7;
-        margin-top:15px;
-    ">
-        Alanya'da geçen, yanlış anlamalar,
-        kıskançlıklar ve giderek büyüyen
-        bir komedi hikâyesi.
-    </p>
-
-    <p style="
-        color:#c99a3d;
-        margin-top:18px;
-        font-size:13px;
-    ">
-        Yönetmen: Alaattin Durmaz
-    </p>
-
-    <a href="#capkinlar"
-       class="button"
-       style="
-           margin-top:25px;
-           align-self:flex-start;
-       ">
-        FİLM DETAYLARI
-    </a>
-
-</div>
-
-</div>
+</section>
 
 
-    <div class="project-card">
-        <span>YAKINDA</span>
 
-        <h3>Burası Cezaevi</h3>
+<!-- ======================================================
+     PROJELER
+====================================================== -->
 
-        <p style="color: #aaaaaa; line-height: 1.6; margin-top: 15px;">
-            AFM Yapım bünyesinde geliştirilen yeni dizi projesi.
-        </p>
+<section
+    class="projects"
+    id="projeler"
+>
 
-        <p style="color: #c99a3d; margin-top: 15px;">
-            Yönetmen: Alaattin Durmaz
-        </p>
+    <div class="projects-header">
+
+        <div class="section-title">
+            SEÇKİLER
+        </div>
+
+        <h2 class="section-heading">
+            Projeler
+        </h2>
+
     </div>
 
-    <div class="project-card">
-        <span>YENİ PROJE</span>
 
-        <h3>Yakında</h3>
+    <div class="project-grid">
 
-        <p style="color: #aaaaaa; line-height: 1.6; margin-top: 15px;">
-            Yeni AFM YAPIM projeleri çok yakında.
-        </p>
+
+        <!-- ÇAPKINLAR OTELİ -->
+
+        <article class="project-card">
+
+            <div class="project-label">
+                2026 • SİNEMA FİLMİ
+            </div>
+
+            <h3>
+                Çapkınlar Oteli
+            </h3>
+
+            <p>
+                Alanya'da geçen, yanlış anlamalar,
+                kıskançlıklar ve giderek büyüyen
+                bir komedi hikâyesi.
+            </p>
+
+            <div class="director-label">
+                Yönetmen: Alaattin Durmaz
+            </div>
+
+            <a
+                href="#capkinlar"
+                class="button"
+            >
+                FİLM DETAYLARI
+            </a>
+
+        </article>
+
+
+        <!-- BURASI CEZAEVİ -->
+
+        <article class="project-card">
+
+            <div class="project-label">
+                YAKINDA
+            </div>
+
+            <h3>
+                Burası Cezaevi
+            </h3>
+
+            <p>
+                AFM Yapım bünyesinde geliştirilen
+                yeni dizi projesi.
+            </p>
+
+            <div class="director-label">
+                Yönetmen: Alaattin Durmaz
+            </div>
+
+        </article>
+
+
+        <!-- YENİ PROJE -->
+
+        <article class="project-card">
+
+            <div class="project-label">
+                YENİ PROJE
+            </div>
+
+            <h3>
+                Yakında
+            </h3>
+
+            <p>
+                Yeni AFM YAPIM projeleri
+                çok yakında.
+            </p>
+
+        </article>
+
     </div>
 
-</div>
+</section>
 
 
-    </section>
-<section class="about" id="capkinlar">
 
-    <div class="section-title">AFM YAPIM SUNAR</div>
-<!-- ÇAPKİNLAR OTELİ ANA FİLM AFİŞİ -->
+<!-- ======================================================
+     ÇAPKINLAR OTELİ
+====================================================== -->
 
-<div style="
-    max-width: 500px;
-    margin: 35px auto 50px;
-    overflow: hidden;
-    border: 1px solid #c99a3d;
-    box-shadow: 0 25px 70px rgba(0,0,0,0.7);
-">
+<section
+    class="movie-section"
+    id="capkinlar"
+>
 
-    <img
-        src="images/capkinlar-oteli-poster.jpg.jpeg"
-        alt="Çapkınlar Oteli - AFM YAPIM"
-        style="
-            width: 100%;
-            display: block;
-            object-fit: cover;
-        "
-    >
+    <div class="section-title">
+        AFM YAPIM SUNAR
+    </div>
 
-</div>
 
-    <h2 style="
-        font-family: Georgia, serif;
-        font-size: clamp(42px, 6vw, 72px);
-        margin-bottom: 15px;
-    ">
+    <!-- KÜÇÜK POSTER -->
+
+    <div class="poster-small">
+
+        <img
+            src="images/capkinlar-oteli-poster.jpg.jpeg"
+            alt="Çapkınlar Oteli - AFM YAPIM"
+        >
+
+    </div>
+
+
+    <h2 class="section-heading">
         Çapkınlar Oteli
     </h2>
 
-    <div style="
-        color: #c99a3d;
-        letter-spacing: 4px;
-        font-size: 12px;
-        margin-bottom: 50px;
-    ">
+    <div class="movie-meta">
         2026 • SİNEMA FİLMİ • KOMEDİ
     </div>
 
 
-    <!-- FİLM GÖRSELİ İÇİN ALAN -->
+    <!-- SİNEMATİK BANNER -->
 
-    <!-- ÇAPKİNLAR OTELİ SİNEMATİK AFİŞ -->
+    <div class="movie-banner">
 
-<div style="
-    max-width: 850px;
-    height: 560px;
-    margin: 0 auto 70px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #c99a3d;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.75);
-    background: #050505;
-">
+        <img
+            src="images/capkinlar-oteli-poster.jpg.jpeg"
+            alt="Çapkınlar Oteli"
+        >
 
-    <!-- FİLM GÖRSELİ -->
+        <div class="movie-overlay"></div>
 
-    <img
-        src="images/capkinlar-oteli-poster.jpg.jpeg"
-        alt="Çapkınlar Oteli"
-        style="
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        "
-    >
+        <div class="movie-banner-content">
 
-    <!-- SİNEMATİK KARARTMA -->
+            <div class="movie-banner-small">
+                AFM YAPIM SUNAR
+            </div>
 
-    <div style="
-        position: absolute;
-        inset: 0;
-        background:
-            linear-gradient(
-                180deg,
-                rgba(0,0,0,0.05) 20%,
-                rgba(0,0,0,0.25) 45%,
-                rgba(0,0,0,0.95) 100%
-            );
-    "></div>
+            <div class="movie-banner-title">
+                ÇAPKINLAR OTELİ
+            </div>
 
-    <!-- FİLM BİLGİLERİ -->
+            <div class="movie-divider"></div>
 
-    <div style="
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 45px 35px;
-        text-align: center;
-    ">
+            <div class="movie-banner-info">
+                2026 • SİNEMA FİLMİ
+            </div>
 
-        <div style="
-            color: #c99a3d;
-            font-size: 11px;
-            letter-spacing: 5px;
-            margin-bottom: 15px;
-        ">
-            AFM YAPIM SUNAR
-        </div>
+            <div class="movie-director">
+                YÖNETMEN: ALAATTİN DURMAZ
+            </div>
 
-        <div style="
-            font-family: Georgia, serif;
-            font-size: clamp(34px, 6vw, 58px);
-            letter-spacing: 4px;
-            color: #ffffff;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-        ">
-            ÇAPKINLAR OTELİ
-        </div>
-
-        <div style="
-            width: 70px;
-            height: 1px;
-            background: #c99a3d;
-            margin: 20px auto;
-        "></div>
-
-        <div style="
-            color: #dddddd;
-            font-size: 12px;
-            letter-spacing: 3px;
-        ">
-            2026 • SİNEMA FİLMİ
-        </div>
-
-        <div style="
-            color: #c99a3d;
-            font-size: 13px;
-            letter-spacing: 2px;
-            margin-top: 12px;
-        ">
-            YÖNETMEN: ALAATTİN DURMAZ
         </div>
 
     </div>
 
-</div>
-
-
 
     <!-- FİLM BİLGİLERİ -->
 
-    <div style="
-        max-width: 1000px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        border-top: 1px solid #333;
-        border-bottom: 1px solid #333;
-    ">
+    <div class="movie-info-grid">
 
-        <div style="padding: 30px 15px;">
-            <div style="
-                color: #c99a3d;
-                font-size: 11px;
-                letter-spacing: 2px;
-                margin-bottom: 10px;
-            ">
+
+        <div class="movie-info-item">
+
+            <div class="movie-info-label">
                 YÖNETMEN
             </div>
 
             <div>
                 Alaattin Durmaz
             </div>
+
         </div>
 
 
-        <div style="padding: 30px 15px;">
-            <div style="
-                color: #c99a3d;
-                font-size: 11px;
-                letter-spacing: 2px;
-                margin-bottom: 10px;
-            ">
+        <div class="movie-info-item">
+
+            <div class="movie-info-label">
                 GÖRÜNTÜ YÖNETMENİ
             </div>
 
             <div>
                 Mehmet Elçi
             </div>
+
         </div>
 
 
-        <div style="padding: 30px 15px;">
-            <div style="
-                color: #c99a3d;
-                font-size: 11px;
-                letter-spacing: 2px;
-                margin-bottom: 10px;
-            ">
+        <div class="movie-info-item">
+
+            <div class="movie-info-label">
                 TÜR
             </div>
 
             <div>
                 Komedi
             </div>
+
         </div>
 
 
-        <div style="padding: 30px 15px;">
-            <div style="
-                color: #c99a3d;
-                font-size: 11px;
-                letter-spacing: 2px;
-                margin-bottom: 10px;
-            ">
+        <div class="movie-info-item">
+
+            <div class="movie-info-label">
                 ÇEKİM YERİ
             </div>
 
             <div>
                 Alanya
             </div>
+
         </div>
 
     </div>
@@ -780,91 +1545,60 @@ nav a {
 
     <!-- HİKÂYE -->
 
-    <div style="
-        max-width: 750px;
-        margin: 70px auto 0;
-        text-align: left;
-    ">
+    <div class="movie-story">
 
         <div class="section-title">
             FİLM HAKKINDA
         </div>
 
-        <h3 style="
-            font-family: Georgia, serif;
-            font-size: 34px;
-            margin-bottom: 25px;
-        ">
+        <h3>
             Hikâye
         </h3>
 
-        <p style="
-            color: #aaa;
-            line-height: 2;
-        ">
-            Alanya'nın sıcak atmosferinde geçen Çapkınlar Oteli,
-            yanlış anlamalar, kıskançlıklar ve giderek büyüyen
-            olaylar üzerinden ilerleyen bir komedi hikâyesidir.
+        <p>
+            Alanya'nın sıcak atmosferinde geçen
+            Çapkınlar Oteli, yanlış anlamalar,
+            kıskançlıklar ve giderek büyüyen olaylar
+            üzerinden ilerleyen bir komedi hikâyesidir.
         </p>
 
-        <p style="
-            color: #aaa;
-            line-height: 2;
-            margin-top: 20px;
-        ">
-            AFM YAPIM tarafından hazırlanan film, seyirciyi
-            eğlenceli ve hareketli bir otel atmosferinin içine
-            davet ediyor.
+        <p style="margin-top:20px;">
+            AFM YAPIM tarafından hazırlanan film,
+            seyirciyi eğlenceli ve hareketli bir
+            otel atmosferinin içine davet ediyor.
         </p>
 
     </div>
 
 
-    <!-- EKİP -->
+    <!-- TEKNİK EKİP -->
 
-    <div style="
-        max-width: 750px;
-        margin: 70px auto 0;
-        text-align: left;
-    ">
+    <div class="movie-team">
 
         <div class="section-title">
             FİLM EKİBİ
         </div>
 
-        <h3 style="
-            font-family: Georgia, serif;
-            font-size: 34px;
-            margin-bottom: 25px;
-        ">
+        <h3>
             Teknik Ekip
         </h3>
 
-        <p style="
-            color: #aaa;
-            line-height: 2;
-        ">
-            <strong style="color:#c99a3d;">
+        <p>
+            <strong class="gold">
                 Yönetmen:
             </strong>
             Alaattin Durmaz
         </p>
 
-        <p style="
-            color: #aaa;
-            line-height: 2;
-        ">
-            <strong style="color:#c99a3d;">
+        <p>
+            <strong class="gold">
                 Görüntü Yönetmeni:
             </strong>
             Mehmet Elçi
         </p>
 
-        <p style="
-            color: #aaa;
-            line-height: 2;
-        ">
-            <strong style="color:#c99a3d;">
+        <p>
+            <strong class="gold">
                 Yapım:
             </strong>
             AFM YAPIM
@@ -874,313 +1608,148 @@ nav a {
 
 </section>
 
-    <section class="director" id="yonetmen">
 
-    <div class="section-title">YARATICI VİZYON</div>
 
-    <div style="
-        max-width: 1100px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 60px;
-        align-items: center;
-        text-align: left;
-    ">
+<!-- ======================================================
+     GALERİ
+====================================================== -->
 
-        <!-- ALAATTİN DURMAZ FOTOĞRAFI -->
-
-        <div style="
-            overflow: hidden;
-            border: 1px solid #c99a3d;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-            background: #111;
-        ">
-<!-- ÇAPKİNLAR OTELİ FOTOĞRAF GALERİSİ -->
-
-<section style="
-    padding: 110px 7%;
-    background: #050505;
-    text-align: center;
-">
+<section
+    class="gallery-section"
+    id="galeri"
+>
 
     <div class="section-title">
-        ÇAPKİNLAR OTELİ
+        ÇAPKINLAR OTELİ
     </div>
 
-    <h2 style="
-        font-family: Georgia, serif;
-        font-size: clamp(40px, 6vw, 64px);
-        margin-bottom: 20px;
-    ">
+    <h2 class="section-heading">
         Filmden Kareler
     </h2>
 
-    <p style="
-        max-width: 650px;
-        margin: 0 auto 55px;
-        color: #888;
-        line-height: 1.8;
-    ">
+    <p class="gallery-description">
         Çapkınlar Oteli'nin çekimlerinden özel kareler.
-        Film setinden görüntüler ve yapım sürecinden seçilmiş fotoğraflar.
+        Film setinden görüntüler ve yapım sürecinden
+        seçilmiş fotoğraflar.
     </p>
 
 
-    <div style="
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-    ">
+    <div class="gallery-grid">
 
-        <!-- FOTOĞRAF 1 -->
 
-        <div style="
-            overflow: hidden;
-            border: 1px solid #222;
-            background: #111;
-        ">
-
+        <div
+            class="gallery-item"
+            onclick="openGallery(0)"
+        >
             <img
                 src="images/capkinlar-1.jpg.jpeg"
-                onclick="openGallery(0)"
-
                 alt="Çapkınlar Oteli - Filmden Kare 1"
-                style="
-                    width: 100%;
-                    height: 360px;
-                    object-fit: cover;
-                    display: block;
-                    cursor: pointer;
-                    transition: transform 0.5s ease;
-                "
-                onmouseover="this.style.transform='scale(1.05)'"
-                onmouseout="this.style.transform='scale(1)'"
             >
-
         </div>
 
 
-        <!-- FOTOĞRAF 2 -->
-
-        <div style="
-            overflow: hidden;
-            border: 1px solid #222;
-            background: #111;
-        ">
-
+        <div
+            class="gallery-item"
+            onclick="openGallery(1)"
+        >
             <img
                 src="images/capkinlar-2.jpg.jpeg"
-                onclick="openGallery(1)"
                 alt="Çapkınlar Oteli - Filmden Kare 2"
-                style="
-                    width: 100%;
-                    height: 360px;
-                    object-fit: cover;
-                    display: block;
-                    cursor: pointer;
-                    transition: transform 0.5s ease;
-                "
-                onmouseover="this.style.transform='scale(1.05)'"
-                onmouseout="this.style.transform='scale(1)'"
             >
-
         </div>
 
 
-        <!-- FOTOĞRAF 3 -->
-
-        <div style="
-            overflow: hidden;
-            border: 1px solid #222;
-            background: #111;
-        ">
-
+        <div
+            class="gallery-item"
+            onclick="openGallery(2)"
+        >
             <img
                 src="images/capkinlar-3.jpg.jpeg"
-                onclick="openGallery(2)"
                 alt="Çapkınlar Oteli - Filmden Kare 3"
-                style="
-                    width: 100%;
-                    height: 360px;
-                    object-fit: cover;
-                    display: block;
-                    cursor: pointer;
-                    transition: transform 0.5s ease;
-                "
-                onmouseover="this.style.transform='scale(1.05)'"
-                onmouseout="this.style.transform='scale(1)'"
             >
-
         </div>
 
 
-        <!-- FOTOĞRAF 4 -->
-
-        <div style="
-            overflow: hidden;
-            border: 1px solid #222;
-            background: #111;
-        ">
-
+        <div
+            class="gallery-item"
+            onclick="openGallery(3)"
+        >
             <img
                 src="images/capkinlar-4.jpg.jpeg"
-                onclick="openGallery(3)"
                 alt="Çapkınlar Oteli - Filmden Kare 4"
-                style="
-                    width: 100%;
-                    height: 360px;
-                    object-fit: cover;
-                    display: block;
-                    cursor: pointer;
-                    transition: transform 0.5s ease;
-                "
-                onmouseover="this.style.transform='scale(1.05)'"
-                onmouseout="this.style.transform='scale(1)'"
             >
-
         </div>
 
 
-        <!-- FOTOĞRAF 5 -->
-
-        <div style="
-            overflow: hidden;
-            border: 1px solid #222;
-            background: #111;
-        ">
-
+        <div
+            class="gallery-item"
+            onclick="openGallery(4)"
+        >
             <img
                 src="images/capkinlar-5.jpg.jpeg"
-                onclick="openGallery(4)"
                 alt="Çapkınlar Oteli - Filmden Kare 5"
-                style="
-                    width: 100%;
-                    height: 360px;
-                    object-fit: cover;
-                    display: block;
-                    cursor: pointer;
-                    transition: transform 0.5s ease;
-                "
-                onmouseover="this.style.transform='scale(1.05)'"
-                onmouseout="this.style.transform='scale(1)'"
             >
-
         </div>
 
 
-        <!-- FOTOĞRAF 6 -->
-
-        <div style="
-            overflow: hidden;
-            border: 1px solid #222;
-            background: #111;
-        ">
-
+        <div
+            class="gallery-item"
+            onclick="openGallery(5)"
+        >
             <img
                 src="images/capkinlar-6.jpg.jpeg"
-                onclick="openGallery(5)"
                 alt="Çapkınlar Oteli - Filmden Kare 6"
-                style="
-                    width: 100%;
-                    height: 360px;
-                    object-fit: cover;
-                    display: block;
-                    cursor: pointer;
-                    transition: transform 0.5s ease;
-                "
-                onmouseover="this.style.transform='scale(1.05)'"
-                onmouseout="this.style.transform='scale(1)'"
             >
-
         </div>
 
 
-        <!-- FOTOĞRAF 7 -->
-
-        <div style="
-            overflow: hidden;
-            border: 1px solid #222;
-            background: #111;
-        ">
-
+        <div
+            class="gallery-item"
+            onclick="openGallery(6)"
+        >
             <img
                 src="images/capkinlar-7.jpg.jpeg"
-                onclick="openGallery(6)"
                 alt="Çapkınlar Oteli - Filmden Kare 7"
-                style="
-                    width: 100%;
-                    height: 360px;
-                    object-fit: cover;
-                    display: block;
-                    cursor: pointer;
-                    transition: transform 0.5s ease;
-                "
-                onmouseover="this.style.transform='scale(1.05)'"
-                onmouseout="this.style.transform='scale(1)'"
             >
-
         </div>
-<!-- FOTOĞRAF 8 -->
 
-<div style="
-    overflow: hidden;
-    border: 1px solid #222;
-    background: #111;
-">
 
-    <img
-        src="images/capkinlar-8.jpg.jpeg"
-        onclick="openGallery(7)"
-        alt="Çapkınlar Oteli - Filmden Kare 8"
-        style="
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-            display: block;
-            cursor: pointer;
-            transition: transform 0.5s ease;
-        "
-        onmouseover="this.style.transform='scale(1.05)'"
-        onmouseout="this.style.transform='scale(1)'"
-    >
+        <div
+            class="gallery-item"
+            onclick="openGallery(7)"
+        >
+            <img
+                src="images/capkinlar-8.jpg.jpeg"
+                alt="Çapkınlar Oteli - Filmden Kare 8"
+            >
+        </div>
 
-</div>
 
     </div>
-    <div style="
-    overflow: hidden;
-    border: 1px solid #222;
-    background: #111;
-">
-
-    <img
-        src="images/capkinlar-8.jpg.jpeg"
-        alt="Çapkınlar Oteli - 8"
-        style="
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-            display: block;
-        "
-    >
-
-</div>
-
 
 </section>
+
+
+
+<!-- ======================================================
+     YÖNETMEN
+====================================================== -->
+
+<section
+    class="director"
+    id="yonetmen"
+>
+
+    <div class="director-grid">
+
+
+        <!-- FOTOĞRAF -->
+
+        <div class="director-photo">
 
             <img
                 src="images/alaattin-durmaz.jpg.jpeg"
                 alt="Alaattin Durmaz"
-                style="
-                    width: 100%;
-                    height: 520px;
-                    object-fit: cover;
-                    display: block;
-                "
             >
 
         </div>
@@ -1191,81 +1760,60 @@ nav a {
         <div>
 
             <div class="section-title">
-                YÖNETMEN • YAPIMCI
+                YARATICI VİZYON
             </div>
 
-            <h2 style="
-                font-family: Georgia, serif;
-                font-size: 52px;
-                margin-bottom: 20px;
-            ">
+            <h2 class="section-heading">
                 Alaattin Durmaz
             </h2>
 
             <div class="director-name">
-                AFM YAPIM
+                YÖNETMEN • YAPIMCI
             </div>
 
-            <p style="
-                color: #aaa;
-                line-height: 1.9;
-                margin-top: 30px;
-            ">
-                Alaattin Durmaz, sinema sektörüne 1978 yılında,
-                henüz 11 yaşındayken adım atan; Yeşilçam'ın kamera,
-                stüdyo, dublaj ve kurgu süreçlerinden yetişerek
-                yapımcılık ve yönetmenliğe uzanan uzun soluklu
-                bir sinema emekçisidir.
+
+            <p class="director-text">
+                Alaattin Durmaz, sinema sektörüne
+                1978 yılında, henüz 11 yaşındayken
+                adım atan; Yeşilçam'ın kamera,
+                stüdyo, dublaj ve kurgu süreçlerinden
+                yetişerek yapımcılık ve yönetmenliğe
+                uzanan uzun soluklu bir sinema
+                emekçisidir.
             </p>
 
-            <p style="
-                color: #aaa;
-                line-height: 1.9;
-                margin-top: 20px;
-            ">
-                Kariyerinin ilk dönemlerinde stüdyo makinistliği,
-                dublaj ve kamera alanlarında görev alan Durmaz,
-                Türk sinemasının teknik süreçlerinde deneyim
-                kazanarak sinema dünyasının farklı alanlarında
-                çalışmalarını sürdürdü.
+
+            <p class="director-text">
+                Kariyerinin ilk dönemlerinde stüdyo
+                makinistliği, dublaj ve kamera
+                alanlarında görev alan Durmaz,
+                Türk sinemasının teknik süreçlerinde
+                deneyim kazanarak sinema dünyasının
+                farklı alanlarında çalışmalarını
+                sürdürdü.
             </p>
 
-            <p style="
-                color: #aaa;
-                line-height: 1.9;
-                margin-top: 20px;
-            ">
-                İlerleyen yıllarda televizyon ve yapım alanlarına
-                yönelen Durmaz, AFM YAPIM çatısı altında sinema,
-                televizyon ve yeni projeler üretmeye devam ediyor.
+
+            <p class="director-text">
+                İlerleyen yıllarda televizyon ve
+                yapım alanlarına yönelen Durmaz,
+                AFM YAPIM çatısı altında sinema,
+                televizyon ve yeni projeler üretmeye
+                devam ediyor.
             </p>
 
-            <div style="
-                margin-top: 35px;
-                padding-top: 25px;
-                border-top: 1px solid #333;
-            ">
 
-                <span style="
-                    color: #c99a3d;
-                    letter-spacing: 2px;
-                    font-size: 12px;
-                ">
+            <div class="director-highlight">
+
+                <span>
                     ÖNE ÇIKAN PROJE
                 </span>
 
-                <h3 style="
-                    font-family: Georgia, serif;
-                    font-size: 28px;
-                    margin-top: 10px;
-                ">
+                <h3>
                     Çapkınlar Oteli
                 </h3>
 
-                <p style="
-                    color: #777;
-                    margin-top: 8px;
-                ">
+                <p>
                     Yönetmen
                 </p>
 
@@ -1279,104 +1827,71 @@ nav a {
 
 
 
+<!-- ======================================================
+     İLETİŞİM
+====================================================== -->
 
-    <section class="contact" id="iletisim">
+<section
+    class="contact"
+    id="iletisim"
+>
 
-    <div class="section-title">BİZE ULAŞIN</div>
+    <div class="section-title">
+        BİZE ULAŞIN
+    </div>
 
-    <h2>İletişim</h2>
+    <h2 class="section-heading">
+        İletişim
+    </h2>
 
-    <p style="
-        max-width: 650px;
-        margin: 0 auto 50px;
-        color: #999;
-        line-height: 1.8;
-    ">
-        Yeni projeler, yapım iş birlikleri ve iletişim talepleriniz
-        için AFM YAPIM ile iletişime geçebilirsiniz.
+    <p class="contact-description">
+        Yeni projeler, yapım iş birlikleri ve
+        iletişim talepleriniz için AFM YAPIM
+        ile iletişime geçebilirsiniz.
     </p>
 
-    <div style="
-        max-width: 900px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    ">
 
-        <!-- TELEFON -->
+    <div class="contact-grid">
 
-        <div style="
-            padding: 35px 20px;
-            border: 1px solid #252525;
-            background: #0b0b0b;
-            transition: 0.3s;
-        ">
 
-            <div style="
-                color: #c99a3d;
-                font-size: 12px;
-                letter-spacing: 3px;
-                margin-bottom: 18px;
-            ">
+        <div class="contact-card">
+
+            <div class="contact-title">
                 TELEFON
             </div>
 
-            <div style="color: #aaa;">
+            <div class="contact-value">
                 Yakında eklenecek
             </div>
 
         </div>
 
 
-        <!-- E-POSTA -->
+        <div class="contact-card">
 
-        <div style="
-            padding: 35px 20px;
-            border: 1px solid #252525;
-            background: #0b0b0b;
-            transition: 0.3s;
-        ">
-
-            <div style="
-                color: #c99a3d;
-                font-size: 12px;
-                letter-spacing: 3px;
-                margin-bottom: 18px;
-            ">
+            <div class="contact-title">
                 E-POSTA
             </div>
 
-            <div style="color: #aaa;">
+            <div class="contact-value">
                 Yakında eklenecek
             </div>
 
         </div>
 
 
-        <!-- ADRES -->
+        <div class="contact-card">
 
-        <div style="
-            padding: 35px 20px;
-            border: 1px solid #252525;
-            background: #0b0b0b;
-            transition: 0.3s;
-        ">
-
-            <div style="
-                color: #c99a3d;
-                font-size: 12px;
-                letter-spacing: 3px;
-                margin-bottom: 18px;
-            ">
+            <div class="contact-title">
                 ADRES
             </div>
 
-            <div style="color: #aaa;">
+            <div class="contact-value">
                 Yakında eklenecek
             </div>
 
         </div>
+
 
     </div>
 
@@ -1384,102 +1899,83 @@ nav a {
 
 
 
-    <footer>
-        © 2026 AFM YAPIM — Tüm Hakları Saklıdır.
-    </footer>
-<!-- FOTOĞRAF BÜYÜK GÖRÜNTÜLEME -->
+<!-- ======================================================
+     FOOTER
+====================================================== -->
 
-<div id="galleryModal" style="
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background: rgba(0,0,0,0.94);
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-">
+<footer>
 
-    <!-- KAPAT -->
+    © 2026 AFM YAPIM — Tüm Hakları Saklıdır.
 
-    <button onclick="closeGallery()" style="
-        position: absolute;
-        top: 25px;
-        right: 30px;
-        z-index: 10001;
-        width: 45px;
-        height: 45px;
-        border: 1px solid #c99a3d;
-        background: rgba(0,0,0,0.5);
-        color: #c99a3d;
-        font-size: 28px;
-        cursor: pointer;
-    ">
+</footer>
+
+
+
+<!-- ======================================================
+     GALERİ MODAL
+====================================================== -->
+
+<div
+    class="gallery-modal"
+    id="galleryModal"
+    onclick="closeGalleryOnBackground(event)"
+>
+
+
+    <button
+        class="gallery-close"
+        onclick="closeGallery()"
+        aria-label="Galeriyi kapat"
+    >
         ×
     </button>
 
 
-    <!-- GERİ -->
-
-    <button onclick="previousImage()" style="
-        position: absolute;
-        left: 25px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10001;
-        width: 55px;
-        height: 55px;
-        border: 1px solid #c99a3d;
-        background: rgba(0,0,0,0.5);
-        color: #c99a3d;
-        font-size: 30px;
-        cursor: pointer;
-    ">
+    <button
+        class="gallery-prev"
+        onclick="previousImage()"
+        aria-label="Önceki fotoğraf"
+    >
         ‹
     </button>
 
 
-    <!-- BÜYÜK FOTOĞRAF -->
-
     <img
         id="galleryImage"
+        class="gallery-modal-image"
         src=""
         alt="Çapkınlar Oteli"
-        style="
-            max-width: 90%;
-            max-height: 85vh;
-            object-fit: contain;
-            border: 1px solid #c99a3d;
-            box-shadow: 0 20px 80px rgba(0,0,0,0.8);
-        "
     >
 
 
-    <!-- İLERİ -->
-
-    <button onclick="nextImage()" style="
-        position: absolute;
-        right: 25px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10001;
-        width: 55px;
-        height: 55px;
-        border: 1px solid #c99a3d;
-        background: rgba(0,0,0,0.5);
-        color: #c99a3d;
-        font-size: 30px;
-        cursor: pointer;
-    ">
+    <button
+        class="gallery-next"
+        onclick="nextImage()"
+        aria-label="Sonraki fotoğraf"
+    >
         ›
     </button>
+
+
+    <div
+        class="gallery-counter"
+        id="galleryCounter"
+    >
+        1 / 8
+    </div>
 
 </div>
 
 
+
 <script>
 
-    const galleryImages = [
+/* =========================================================
+   GALERİ
+========================================================= */
+
+const galleryImages = [
+
     "images/capkinlar-1.jpg.jpeg",
     "images/capkinlar-2.jpg.jpeg",
     "images/capkinlar-3.jpg.jpeg",
@@ -1488,76 +1984,207 @@ nav a {
     "images/capkinlar-6.jpg.jpeg",
     "images/capkinlar-7.jpg.jpeg",
     "images/capkinlar-8.jpg.jpeg"
+
 ];
 
 
-    let currentImage = 0;
+let currentImage = 0;
 
 
-    function openGallery(index) {
+const galleryModal =
+    document.getElementById("galleryModal");
 
-        currentImage = index;
+const galleryImage =
+    document.getElementById("galleryImage");
 
-        document.getElementById("galleryModal").style.display = "flex";
+const galleryCounter =
+    document.getElementById("galleryCounter");
 
-        document.getElementById("galleryImage").src =
-            galleryImages[currentImage];
 
-        document.body.style.overflow = "hidden";
+function updateGallery() {
+
+    galleryImage.src =
+        galleryImages[currentImage];
+
+    galleryCounter.textContent =
+        `${currentImage + 1} / ${galleryImages.length}`;
+
+}
+
+
+function openGallery(index) {
+
+    currentImage = index;
+
+    updateGallery();
+
+    galleryModal.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeGallery() {
+
+    galleryModal.classList.remove("show");
+
+    document.body.style.overflow = "";
+
+}
+
+
+function closeGalleryOnBackground(event) {
+
+    if (event.target === galleryModal) {
+        closeGallery();
     }
 
+}
 
-    function closeGallery() {
 
-        document.getElementById("galleryModal").style.display = "none";
+function nextImage() {
 
-        document.body.style.overflow = "auto";
+    currentImage++;
+
+    if (
+        currentImage >=
+        galleryImages.length
+    ) {
+        currentImage = 0;
     }
 
+    updateGallery();
 
-    function nextImage() {
+}
 
-        currentImage++;
 
-        if (currentImage >= galleryImages.length) {
-            currentImage = 0;
+function previousImage() {
+
+    currentImage--;
+
+    if (currentImage < 0) {
+        currentImage =
+            galleryImages.length - 1;
+    }
+
+    updateGallery();
+
+}
+
+
+/* =========================================================
+   KLAVYE KONTROLLERİ
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            !galleryModal.classList.contains("show")
+        ) {
+            return;
         }
 
-        document.getElementById("galleryImage").src =
-            galleryImages[currentImage];
-    }
-
-
-    function previousImage() {
-
-        currentImage--;
-
-        if (currentImage < 0) {
-            currentImage = galleryImages.length - 1;
-        }
-
-        document.getElementById("galleryImage").src =
-            galleryImages[currentImage];
-    }
-
-
-    document.addEventListener("keydown", function(event) {
 
         if (event.key === "Escape") {
+
             closeGallery();
+
         }
+
 
         if (event.key === "ArrowRight") {
+
             nextImage();
+
         }
 
+
         if (event.key === "ArrowLeft") {
+
             previousImage();
+
         }
+
+    }
+);
+
+
+/* =========================================================
+   MENÜ AKTİF BÖLÜM
+========================================================= */
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+const menuLinks =
+    document.querySelectorAll("nav a");
+
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    menuLinks.forEach(link => {
+
+                        link.classList.remove("active");
+
+                    });
+
+
+                    const activeLink =
+                        document.querySelector(
+                            `nav a[href="#${entry.target.id}"]`
+                        );
+
+
+                    if (activeLink) {
+                        activeLink.classList.add("active");
+                    }
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .25
+        }
+    );
+
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+
+/* =========================================================
+   RESİM YÜKLENMEDİĞİNDE KONTROL
+========================================================= */
+
+document.querySelectorAll("img").forEach(img => {
+
+    img.addEventListener("error", function() {
+
+        console.warn(
+            "Görsel bulunamadı:",
+            this.src
+        );
 
     });
 
+});
+
 </script>
+
 
 </body>
 </html>
