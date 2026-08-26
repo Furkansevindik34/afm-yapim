@@ -10,10 +10,10 @@
 <title>AFM Yapım | 1996'dan Beri Film ve Prodüksiyon</title>
 
 <meta name="description"
-      content="1996'dan beri AFM Yapım. Film, sinema, televizyon ve profesyonel prodüksiyon projeleri geliştiren yapım şirketi.">
+      content="AFM Yapım | 1996'dan beri film, sinema, televizyon ve profesyonel prodüksiyon projeleri geliştiren yapım şirketi. Çapkınlar Oteli ve yeni projeler.">
 
 <meta name="keywords"
-      content="AFM Yapım, AFM Yapım film, AFM Yapım prodüksiyon, Alaattin Durmaz, Alaaddin Durmaz, Çapkınlar Oteli, Alanya film, film prodüksiyon, sinema filmi, yapım şirketi">
+      content="AFM Yapım, AFM Yapım film, AFM Yapım prodüksiyon, Alaattin Durmaz, Alaaddin Durmaz, Çapkınlar Oteli, Alanya film, yapım şirketi, sinema filmi, film prodüksiyon">
 
 <meta name="author"
       content="AFM Yapım">
@@ -22,14 +22,14 @@
       content="index, follow">
 
 <meta name="theme-color"
-      content="#030303">
+      content="#050505">
 
 <link rel="canonical"
       href="https://mahmutgaziavci.github.io/afm-yapim/">
 
 <link rel="icon"
       type="image/jpeg"
-      href="./images/afm-logo.jpeg">
+      href="images/afm-logo.jpeg">
 
 
 <!-- ======================================================
@@ -46,10 +46,10 @@
       content="AFM Yapım">
 
 <meta property="og:title"
-      content="AFM Yapım | 1996'dan Beri">
+      content="AFM Yapım | 1996'dan Beri Film ve Prodüksiyon">
 
 <meta property="og:description"
-      content="AFM Yapım | Film ve Prodüksiyon Şirketi">
+      content="1996'dan beri sinema, televizyon ve profesyonel prodüksiyon projeleri.">
 
 <meta property="og:url"
       content="https://mahmutgaziavci.github.io/afm-yapim/">
@@ -66,10 +66,10 @@
       content="summary_large_image">
 
 <meta name="twitter:title"
-      content="AFM Yapım | 1996'dan Beri">
+      content="AFM Yapım">
 
 <meta name="twitter:description"
-      content="AFM Yapım | Film ve Prodüksiyon Şirketi">
+      content="1996'dan beri film, sinema ve profesyonel prodüksiyon.">
 
 <meta name="twitter:image"
       content="https://mahmutgaziavci.github.io/afm-yapim/images/afm-logo.jpeg">
@@ -139,23 +139,30 @@
 <style>
 
 /* =========================================================
-   ROOT
+   VARIABLES
 ========================================================= */
 
 :root {
 
     --gold: #c99a3d;
-    --gold-light: #f0cc7a;
-    --gold-dark: #805d1c;
 
-    --black: #020202;
-    --dark: #070707;
-    --dark-2: #0c0c0c;
-    --dark-3: #111111;
+    --gold-light: #e5bd67;
+
+    --gold-dark: #8f6821;
+
+    --black: #030303;
+
+    --dark: #080808;
+
+    --dark-2: #101010;
+
+    --dark-3: #151515;
 
     --white: #f7f5ef;
+
     --gray: #999;
-    --gray-light: #cfcfcf;
+
+    --gray-light: #c8c8c8;
 
     --border: rgba(255,255,255,.10);
 
@@ -200,13 +207,6 @@ body {
         sans-serif;
 
     overflow-x: hidden;
-
-}
-
-
-body.menu-open {
-
-    overflow: hidden;
 
 }
 
@@ -257,13 +257,6 @@ button {
 }
 
 
-::-webkit-scrollbar-thumb:hover {
-
-    background: var(--gold-light);
-
-}
-
-
 /* =========================================================
    HEADER
 ========================================================= */
@@ -273,11 +266,12 @@ header {
     position: fixed;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
 
-    height: 88px;
+    height: 86px;
 
     padding: 0 6%;
 
@@ -293,42 +287,29 @@ header {
         linear-gradient(
             180deg,
             rgba(0,0,0,.96),
-            rgba(0,0,0,.72)
+            rgba(0,0,0,.70)
         );
 
-    backdrop-filter: blur(18px);
-
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(16px);
 
     border-bottom:
         1px solid
-        rgba(201,154,61,.20);
+        rgba(201,154,61,.22);
 
-    transition:
-        height .35s ease,
-        background .35s ease,
-        box-shadow .35s ease;
+    transition: .35s ease;
 
 }
 
 
 header.scrolled {
 
-    height: 70px;
+    height: 72px;
 
     background:
         rgba(0,0,0,.97);
 
-    box-shadow:
-        0 10px 40px
-        rgba(0,0,0,.45);
-
 }
 
-
-/* =========================================================
-   LOGO
-========================================================= */
 
 .logo {
 
@@ -345,25 +326,10 @@ header.scrolled {
 
     width: 125px;
 
-    height: auto;
-
     display: block;
 
-    transition: .35s ease;
-
 }
 
-
-header.scrolled .logo img {
-
-    width: 108px;
-
-}
-
-
-/* =========================================================
-   NAV
-========================================================= */
 
 nav {
 
@@ -371,7 +337,7 @@ nav {
 
     align-items: center;
 
-    gap: 28px;
+    gap: 30px;
 
 }
 
@@ -380,17 +346,17 @@ nav a {
 
     position: relative;
 
-    color: #d8d8d8;
+    color: #ddd;
 
     text-decoration: none;
 
-    font-size: 10px;
+    font-size: 11px;
 
     font-weight: 500;
 
     letter-spacing: 2px;
 
-    padding: 12px 0;
+    padding: 10px 0;
 
     transition: .3s ease;
 
@@ -405,13 +371,13 @@ nav a::after {
 
     left: 0;
 
-    bottom: 3px;
+    bottom: 2px;
 
     width: 0;
 
     height: 1px;
 
-    background: var(--gold-light);
+    background: var(--gold);
 
     transition: .3s ease;
 
@@ -435,29 +401,26 @@ nav a.active::after {
 
 
 /* =========================================================
-   MOBILE MENU BUTTON
+   MOBILE MENU
 ========================================================= */
 
 .menu-toggle {
 
     display: none;
 
-    width: 44px;
+    width: 42px;
 
-    height: 44px;
+    height: 42px;
 
     border:
         1px solid
-        rgba(201,154,61,.55);
+        rgba(201,154,61,.5);
 
-    background:
-        rgba(0,0,0,.25);
+    background: transparent;
 
     color: var(--gold);
 
     cursor: pointer;
-
-    position: relative;
 
 }
 
@@ -466,40 +429,13 @@ nav a.active::after {
 
     display: block;
 
-    width: 19px;
+    width: 18px;
 
     height: 1px;
 
     background: var(--gold);
 
     margin: 4px auto;
-
-    transition: .3s ease;
-
-}
-
-
-.menu-toggle.active span:nth-child(1) {
-
-    transform:
-        translateY(5px)
-        rotate(45deg);
-
-}
-
-
-.menu-toggle.active span:nth-child(2) {
-
-    opacity: 0;
-
-}
-
-
-.menu-toggle.active span:nth-child(3) {
-
-    transform:
-        translateY(-5px)
-        rotate(-45deg);
 
 }
 
@@ -529,11 +465,11 @@ nav a.active::after {
     background:
 
         linear-gradient(
-            rgba(0,0,0,.55),
+            rgba(0,0,0,.58),
             rgba(0,0,0,.88)
         ),
 
-        url("./images/capkinlar-set.jpg.jpeg")
+        url("images/capkinlar-set.jpg.jpeg")
         center / cover no-repeat,
 
         #080808;
@@ -553,11 +489,9 @@ nav a.active::after {
 
         radial-gradient(
             circle at center,
-            rgba(201,154,61,.17),
+            rgba(201,154,61,.16),
             transparent 40%
         );
-
-    pointer-events: none;
 
 }
 
@@ -593,10 +527,7 @@ nav a.active::after {
 
     max-width: 1050px;
 
-    padding:
-        145px
-        25px
-        90px;
+    padding: 150px 25px 100px;
 
     animation:
         heroReveal
@@ -607,7 +538,7 @@ nav a.active::after {
 
 
 /* =========================================================
-   NEW HERO TEXT
+   NEW HERO BRANDING
 ========================================================= */
 
 .hero-eyebrow {
@@ -616,11 +547,11 @@ nav a.active::after {
 
     font-size: 11px;
 
-    letter-spacing: 6px;
+    letter-spacing: 7px;
 
     margin-bottom: 30px;
 
-    text-transform: uppercase;
+    font-weight: 500;
 
 }
 
@@ -634,33 +565,48 @@ nav a.active::after {
 
     font-size:
         clamp(
-            58px,
-            9vw,
-            125px
+            55px,
+            8vw,
+            112px
         );
 
     font-weight: 500;
 
-    line-height: .9;
+    line-height: .95;
 
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
+    letter-spacing: 3px;
 
 }
 
 
-.hero h1 .year {
+.hero h1 .since {
 
     display: block;
 
-    color: var(--white);
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
 
-    font-size: .72em;
+    color: var(--gold-light);
 
-    letter-spacing: 10px;
+    font-size:
+        clamp(
+            18px,
+            2.2vw,
+            28px
+        );
 
-    margin-bottom: 20px;
+    font-weight: 500;
+
+    letter-spacing:
+        clamp(
+            5px,
+            1vw,
+            10px
+        );
+
+    margin-bottom: 22px;
 
 }
 
@@ -669,58 +615,53 @@ nav a.active::after {
 
     display: block;
 
-    color: var(--gold-light);
+    margin-top: 12px;
 
-    font-size: .34em;
+    font-size:
+        clamp(
+            34px,
+            5vw,
+            72px
+        );
 
-    letter-spacing: 5px;
-
-    margin-top: 28px;
-
-    line-height: 1.4;
+    letter-spacing: 2px;
 
 }
 
 
 .hero-line {
 
-    width: 95px;
+    width: 100px;
 
     height: 1px;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--gold),
-            transparent
-        );
+    background: var(--gold);
 
-    margin: 38px auto;
+    margin: 35px auto;
 
 }
 
 
 .hero-description {
 
-    max-width: 650px;
+    max-width: 680px;
 
     margin: auto;
 
-    color: #c7c7c7;
+    color: #ccc;
 
     font-size: 14px;
 
     line-height: 1.9;
 
-    letter-spacing: .8px;
+    letter-spacing: 1px;
 
 }
 
 
 .hero-buttons {
 
-    margin-top: 40px;
+    margin-top: 38px;
 
     display: flex;
 
@@ -733,10 +674,6 @@ nav a.active::after {
 }
 
 
-/* =========================================================
-   BUTTONS
-========================================================= */
-
 .btn {
 
     display: inline-flex;
@@ -747,7 +684,7 @@ nav a.active::after {
 
     min-width: 190px;
 
-    padding: 16px 28px;
+    padding: 15px 26px;
 
     border:
         1px solid
@@ -757,12 +694,11 @@ nav a.active::after {
 
     text-decoration: none;
 
-    font-size: 9px;
+    font-size: 10px;
 
     letter-spacing: 3px;
 
-    transition:
-        .35s ease;
+    transition: .35s ease;
 
 }
 
@@ -771,13 +707,12 @@ nav a.active::after {
 
     background: var(--gold);
 
-    color: #050505;
+    color: #000;
 
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
-        0 10px 30px
+        0 12px 35px
         rgba(201,154,61,.18);
 
 }
@@ -794,8 +729,7 @@ nav a.active::after {
 
 .btn-fill:hover {
 
-    background:
-        var(--gold-light);
+    background: var(--gold-light);
 
 }
 
@@ -808,20 +742,17 @@ nav a.active::after {
 
     position: absolute;
 
-    bottom: 28px;
+    bottom: 30px;
 
     left: 50%;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
     color: #888;
 
-    font-size: 8px;
+    font-size: 9px;
 
     letter-spacing: 4px;
-
-    z-index: 3;
 
 }
 
@@ -834,26 +765,17 @@ nav a.active::after {
 
     width: 1px;
 
-    height: 38px;
+    height: 35px;
 
-    margin:
-        10px auto 0;
+    margin: 10px auto 0;
 
-    background:
-        linear-gradient(
-            var(--gold),
-            transparent
-        );
-
-    animation:
-        scrollLine 2s
-        infinite;
+    background: var(--gold);
 
 }
 
 
 /* =========================================================
-   SECTIONS
+   GENERAL
 ========================================================= */
 
 section {
@@ -865,55 +787,45 @@ section {
 
 .container {
 
-    max-width:
-        var(--container);
+    max-width: var(--container);
 
-    margin:
-        auto;
+    margin: auto;
 
 }
 
 
 .section {
 
-    padding:
-        125px 6%;
+    padding: 125px 6%;
 
 }
 
 
 .section-dark {
 
-    background:
-        var(--dark);
+    background: var(--dark);
 
 }
 
 
 .section-black {
 
-    background:
-        var(--black);
+    background: var(--black);
 
 }
 
 
 .section-label {
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-size:
-        10px;
+    font-size: 10px;
 
-    font-weight:
-        600;
+    font-weight: 600;
 
-    letter-spacing:
-        5px;
+    letter-spacing: 5px;
 
-    margin-bottom:
-        18px;
+    margin-bottom: 18px;
 
 }
 
@@ -932,31 +844,24 @@ section {
             68px
         );
 
-    line-height:
-        1;
+    line-height: 1;
 
-    font-weight:
-        500;
+    font-weight: 500;
 
 }
 
 
 .section-intro {
 
-    max-width:
-        700px;
+    max-width: 700px;
 
-    margin-top:
-        25px;
+    margin-top: 25px;
 
-    color:
-        var(--gray);
+    color: var(--gray);
 
-    line-height:
-        1.9;
+    line-height: 1.9;
 
-    font-size:
-        15px;
+    font-size: 15px;
 
 }
 
@@ -967,17 +872,14 @@ section {
 
 .about-grid {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         .8fr 1.2fr;
 
-    gap:
-        90px;
+    gap: 90px;
 
-    align-items:
-        center;
+    align-items: center;
 
 }
 
@@ -989,46 +891,32 @@ section {
         Georgia,
         serif;
 
-    font-size:
-        clamp(
-            100px,
-            15vw,
-            180px
-        );
+    font-size: 180px;
 
     color:
         rgba(201,154,61,.10);
 
-    line-height:
-        .7;
-
-    letter-spacing:
-        -5px;
+    line-height: .7;
 
 }
 
 
 .about-copy {
 
-    color:
-        #aaa;
+    color: #aaa;
 
-    font-size:
-        16px;
+    font-size: 16px;
 
-    line-height:
-        2;
+    line-height: 2;
 
 }
 
 
 .about-copy strong {
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 
-    font-weight:
-        500;
+    font-weight: 500;
 
 }
 
@@ -1039,11 +927,10 @@ section {
 
 .stats {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(4, 1fr);
 
     border-top:
         1px solid
@@ -1053,19 +940,16 @@ section {
         1px solid
         var(--border);
 
-    margin-top:
-        65px;
+    margin-top: 65px;
 
 }
 
 
 .stat {
 
-    padding:
-        35px 20px;
+    padding: 35px 20px;
 
-    text-align:
-        center;
+    text-align: center;
 
     border-right:
         1px solid
@@ -1076,78 +960,66 @@ section {
 
 .stat:last-child {
 
-    border-right:
-        none;
+    border-right: none;
 
 }
 
 
 .stat-number {
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 
     font-family:
         "Cormorant Garamond",
         Georgia,
         serif;
 
-    font-size:
-        48px;
+    font-size: 48px;
 
 }
 
 
 .stat-label {
 
-    margin-top:
-        7px;
+    margin-top: 7px;
 
-    color:
-        #777;
+    color: #777;
 
-    font-size:
-        9px;
+    font-size: 9px;
 
-    letter-spacing:
-        2px;
+    letter-spacing: 2px;
 
 }
 
 
 /* =========================================================
-   FILM
+   FEATURED FILM
 ========================================================= */
 
 .film {
 
-    background:
-        #070707;
+    background: #070707;
 
 }
 
 
 .film-layout {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         .85fr 1.15fr;
 
-    gap:
-        70px;
+    gap: 70px;
 
-    align-items:
-        center;
+    align-items: center;
 
 }
 
 
 .poster {
 
-    position:
-        relative;
+    position: relative;
 
     border:
         1px solid
@@ -1157,44 +1029,25 @@ section {
         0 30px 80px
         rgba(0,0,0,.7);
 
-    overflow:
-        hidden;
-
 }
 
 
 .poster img {
 
-    display:
-        block;
+    display: block;
 
-    width:
-        100%;
-
-    transition:
-        transform .7s ease;
-
-}
-
-
-.poster:hover img {
-
-    transform:
-        scale(1.025);
+    width: 100%;
 
 }
 
 
 .poster::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    inset: 0;
 
     background:
         linear-gradient(
@@ -1203,25 +1056,20 @@ section {
             rgba(0,0,0,.4)
         );
 
-    pointer-events:
-        none;
+    pointer-events: none;
 
 }
 
 
 .film-year {
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-size:
-        11px;
+    font-size: 11px;
 
-    letter-spacing:
-        4px;
+    letter-spacing: 4px;
 
-    margin-bottom:
-        15px;
+    margin-bottom: 15px;
 
 }
 
@@ -1240,42 +1088,33 @@ section {
             82px
         );
 
-    line-height:
-        .9;
+    line-height: .9;
 
 }
 
 
 .film-description {
 
-    color:
-        #999;
+    color: #999;
 
-    line-height:
-        1.9;
+    line-height: 1.9;
 
-    margin-top:
-        28px;
+    margin-top: 28px;
 
-    max-width:
-        650px;
+    max-width: 650px;
 
 }
 
 
 .film-tags {
 
-    display:
-        flex;
+    display: flex;
 
-    flex-wrap:
-        wrap;
+    flex-wrap: wrap;
 
-    gap:
-        8px;
+    gap: 8px;
 
-    margin-top:
-        28px;
+    margin-top: 28px;
 
 }
 
@@ -1286,17 +1125,13 @@ section {
         1px solid
         rgba(201,154,61,.35);
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 
-    padding:
-        8px 12px;
+    padding: 8px 12px;
 
-    font-size:
-        9px;
+    font-size: 9px;
 
-    letter-spacing:
-        2px;
+    letter-spacing: 2px;
 
 }
 
@@ -1307,14 +1142,12 @@ section {
 
 .credits {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(4, 1fr);
 
-    margin-top:
-        60px;
+    margin-top: 60px;
 
     border-top:
         1px solid
@@ -1329,8 +1162,7 @@ section {
 
 .credit {
 
-    padding:
-        30px 20px;
+    padding: 30px 20px;
 
     border-right:
         1px solid
@@ -1341,36 +1173,29 @@ section {
 
 .credit:last-child {
 
-    border-right:
-        none;
+    border-right: none;
 
 }
 
 
 .credit-label {
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-size:
-        9px;
+    font-size: 9px;
 
-    letter-spacing:
-        2px;
+    letter-spacing: 2px;
 
-    margin-bottom:
-        10px;
+    margin-bottom: 10px;
 
 }
 
 
 .credit-value {
 
-    color:
-        #ddd;
+    color: #ddd;
 
-    font-size:
-        14px;
+    font-size: 14px;
 
 }
 
@@ -1381,11 +1206,9 @@ section {
 
 .story {
 
-    max-width:
-        850px;
+    max-width: 850px;
 
-    margin:
-        75px auto 0;
+    margin: 75px auto 0;
 
 }
 
@@ -1397,25 +1220,20 @@ section {
         Georgia,
         serif;
 
-    font-size:
-        42px;
+    font-size: 42px;
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
 }
 
 
 .story p {
 
-    color:
-        #999;
+    color: #999;
 
-    line-height:
-        2;
+    line-height: 2;
 
-    margin-top:
-        15px;
+    margin-top: 15px;
 
 }
 
@@ -1426,41 +1244,44 @@ section {
 
 .cast-grid {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(4, 1fr);
 
-    gap:
-        15px;
+    gap: 15px;
 
-    margin-top:
-        60px;
+    margin-top: 60px;
 
 }
 
 
 .cast-card {
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    min-height:
-        300px;
+    min-height: 300px;
 
     background:
-        #0b0b0b;
+        radial-gradient(
+            circle at center,
+            #1c1c1c,
+            #080808
+        );
 
     border:
         1px solid
-        #252525;
+        #292929;
 
-    transition:
-        .35s ease;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .4s ease;
 
 }
 
@@ -1474,81 +1295,56 @@ section {
         translateY(-5px);
 
     box-shadow:
-        0 20px 50px
+        0 20px 45px
         rgba(0,0,0,.45);
 
 }
 
 
-/* =========================================================
-   LOGO INSTEAD OF ACTOR PHOTOS
-========================================================= */
-
 .cast-card img {
 
-    width:
-        100%;
+    width: 75%;
 
-    height:
-        300px;
+    height: auto;
 
-    object-fit:
-        contain;
+    max-height: 190px;
 
-    display:
-        block;
+    object-fit: contain;
 
-    padding:
-        55px 35px;
+    display: block;
 
-    background:
-        radial-gradient(
-            circle,
-            #191919 0%,
-            #080808 70%
-        );
+    opacity: .88;
 
-    opacity:
-        .92;
-
-    transition:
-        .45s ease;
+    transition: .5s;
 
 }
 
 
 .cast-card:hover img {
 
-    transform:
-        scale(1.04);
+    transform: scale(1.05);
 
-    opacity:
-        1;
+    opacity: 1;
 
 }
 
 
 .cast-info {
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        0;
+    left: 0;
 
-    right:
-        0;
+    right: 0;
 
-    bottom:
-        0;
+    bottom: 0;
 
-    padding:
-        45px 18px 18px;
+    padding: 55px 18px 18px;
 
     background:
         linear-gradient(
             transparent,
-            rgba(0,0,0,.98)
+            rgba(0,0,0,.96)
         );
 
 }
@@ -1561,25 +1357,20 @@ section {
         Georgia,
         serif;
 
-    font-size:
-        25px;
+    font-size: 25px;
 
 }
 
 
 .cast-role {
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-size:
-        9px;
+    font-size: 9px;
 
-    letter-spacing:
-        2px;
+    letter-spacing: 2px;
 
-    margin-top:
-        5px;
+    margin-top: 5px;
 
 }
 
@@ -1593,11 +1384,11 @@ section {
     background:
 
         linear-gradient(
-            rgba(0,0,0,.87),
-            rgba(0,0,0,.94)
+            rgba(0,0,0,.86),
+            rgba(0,0,0,.93)
         ),
 
-        url("./images/alanya-film-location.jpg")
+        url("images/alanya-film-location.jpg")
         center / cover fixed;
 
 }
@@ -1605,34 +1396,27 @@ section {
 
 .location-grid {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(5,1fr);
+        repeat(5, 1fr);
 
-    gap:
-        12px;
+    gap: 12px;
 
-    margin-top:
-        55px;
+    margin-top: 55px;
 
 }
 
 
 .location {
 
-    min-height:
-        190px;
+    min-height: 190px;
 
-    padding:
-        25px;
+    padding: 25px;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        flex-end;
+    align-items: flex-end;
 
     border:
         1px solid
@@ -1645,8 +1429,7 @@ section {
             rgba(0,0,0,.85)
         );
 
-    transition:
-        .35s;
+    transition: .35s;
 
 }
 
@@ -1669,8 +1452,7 @@ section {
         Georgia,
         serif;
 
-    font-size:
-        27px;
+    font-size: 27px;
 
 }
 
@@ -1681,25 +1463,21 @@ section {
 
 .director-grid {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         .8fr 1.2fr;
 
-    gap:
-        80px;
+    gap: 80px;
 
-    align-items:
-        center;
+    align-items: center;
 
 }
 
 
 .director-photo {
 
-    position:
-        relative;
+    position: relative;
 
     border:
         1px solid
@@ -1710,137 +1488,109 @@ section {
 
 .director-photo img {
 
-    display:
-        block;
+    display: block;
 
-    width:
-        100%;
+    width: 100%;
 
-    aspect-ratio:
-        4 / 5;
+    aspect-ratio: 4 / 5;
 
-    object-fit:
-        cover;
+    object-fit: cover;
 
 }
 
 
 .director-photo::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        15px;
+    inset: 15px;
 
     border:
         1px solid
         rgba(201,154,61,.35);
 
-    z-index:
-        2;
+    z-index: 2;
 
-    pointer-events:
-        none;
+    pointer-events: none;
 
 }
 
 
 .director-name {
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    letter-spacing:
-        4px;
+    letter-spacing: 4px;
 
-    margin-top:
-        15px;
+    margin-top: 15px;
 
 }
 
 
 .director-copy {
 
-    color:
-        #999;
+    color: #999;
 
-    line-height:
-        2;
+    line-height: 2;
 
-    margin-top:
-        28px;
+    margin-top: 28px;
 
 }
 
 
 .timeline {
 
-    margin-top:
-        45px;
+    margin-top: 45px;
 
     border-left:
         1px solid
         var(--gold);
 
-    padding-left:
-        25px;
+    padding-left: 25px;
 
 }
 
 
 .timeline-item {
 
-    margin-bottom:
-        28px;
+    margin-bottom: 28px;
 
 }
 
 
 .timeline-year {
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-size:
-        10px;
+    font-size: 10px;
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 
 }
 
 
 .timeline-title {
 
-    margin-top:
-        5px;
+    margin-top: 5px;
 
-    color:
-        #ddd;
+    color: #ddd;
 
 }
 
 
 .timeline-text {
 
-    margin-top:
-        6px;
+    margin-top: 6px;
 
-    color:
-        #777;
+    color: #777;
 
-    font-size:
-        13px;
+    font-size: 13px;
 
-    line-height:
-        1.7;
+    line-height: 1.7;
 
 }
 
@@ -1851,34 +1601,27 @@ section {
 
 .gallery-grid {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
-    gap:
-        12px;
+    gap: 12px;
 
-    margin-top:
-        55px;
+    margin-top: 55px;
 
 }
 
 
 .gallery-item {
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    background:
-        #111;
+    background: #111;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
 }
 
@@ -1886,25 +1629,20 @@ section {
 .gallery-item:nth-child(1),
 .gallery-item:nth-child(6) {
 
-    grid-row:
-        span 2;
+    grid-row: span 2;
 
 }
 
 
 .gallery-item img {
 
-    width:
-        100%;
+    width: 100%;
 
-    height:
-        280px;
+    height: 280px;
 
-    object-fit:
-        cover;
+    object-fit: cover;
 
-    display:
-        block;
+    display: block;
 
     transition:
         transform .6s ease,
@@ -1916,65 +1654,50 @@ section {
 .gallery-item:nth-child(1) img,
 .gallery-item:nth-child(6) img {
 
-    height:
-        572px;
+    height: 572px;
 
 }
 
 
 .gallery-item:hover img {
 
-    transform:
-        scale(1.06);
+    transform: scale(1.06);
 
-    filter:
-        brightness(.65);
+    filter: brightness(.7);
 
 }
 
 
 .gallery-item::after {
 
-    content:
-        "+";
+    content: "+";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    inset: 0;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-size:
-        38px;
+    font-size: 38px;
 
-    background:
-        rgba(0,0,0,.3);
+    background: rgba(0,0,0,.3);
 
-    opacity:
-        0;
+    opacity: 0;
 
-    transition:
-        .3s;
+    transition: .3s;
 
 }
 
 
 .gallery-item:hover::after {
 
-    opacity:
-        1;
+    opacity: 1;
 
 }
 
@@ -1985,43 +1708,36 @@ section {
 
 .press {
 
-    background:
-        var(--dark);
+    background: var(--dark);
 
 }
 
 
 .press-grid {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
-    gap:
-        18px;
+    gap: 18px;
 
-    margin-top:
-        55px;
+    margin-top: 55px;
 
 }
 
 
 .press-card {
 
-    padding:
-        30px;
+    padding: 30px;
 
     border:
         1px solid
         var(--border);
 
-    background:
-        #0b0b0b;
+    background: #0b0b0b;
 
-    transition:
-        .3s;
+    transition: .3s;
 
 }
 
@@ -2039,14 +1755,11 @@ section {
 
 .press-source {
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-size:
-        9px;
+    font-size: 9px;
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 
 }
 
@@ -2058,59 +1771,46 @@ section {
         Georgia,
         serif;
 
-    font-size:
-        28px;
+    font-size: 28px;
 
-    line-height:
-        1.1;
+    line-height: 1.1;
 
-    margin-top:
-        18px;
+    margin-top: 18px;
 
 }
 
 
 .press-date {
 
-    color:
-        #666;
+    color: #666;
 
-    font-size:
-        10px;
+    font-size: 10px;
 
-    margin-top:
-        15px;
+    margin-top: 15px;
 
 }
 
 
 .press-link {
 
-    display:
-        inline-block;
+    display: inline-block;
 
-    margin-top:
-        25px;
+    margin-top: 25px;
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 
-    font-size:
-        9px;
+    font-size: 9px;
 
-    letter-spacing:
-        2px;
+    letter-spacing: 2px;
 
-    text-decoration:
-        none;
+    text-decoration: none;
 
 }
 
 
 .press-link:hover {
 
-    color:
-        white;
+    color: #fff;
 
 }
 
@@ -2121,46 +1821,38 @@ section {
 
 .contact {
 
-    text-align:
-        center;
+    text-align: center;
 
 }
 
 
 .contact-grid {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
-    gap:
-        15px;
+    gap: 15px;
 
-    max-width:
-        1000px;
+    max-width: 1000px;
 
-    margin:
-        55px auto 0;
+    margin: 55px auto 0;
 
 }
 
 
 .contact-card {
 
-    padding:
-        35px 20px;
+    padding: 35px 20px;
 
     border:
         1px solid
         var(--border);
 
-    background:
-        #090909;
+    background: #090909;
 
-    transition:
-        .3s ease;
+    transition: .3s ease;
 
 }
 
@@ -2178,95 +1870,109 @@ section {
 
 .contact-label {
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-size:
-        9px;
+    font-size: 9px;
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 
 }
 
 
 .contact-value {
 
-    color:
-        #aaa;
+    color: #aaa;
 
-    margin-top:
-        15px;
+    margin-top: 15px;
 
-    font-size:
-        14px;
+    font-size: 14px;
 
 }
 
 
 .contact-value a {
 
-    text-decoration:
-        none;
+    text-decoration: none;
 
 }
 
 
 .contact-value a:hover {
 
-    color:
-        var(--gold-light);
+    color: var(--gold-light);
 
 }
 
 
 /* =========================================================
-   SOCIAL
+   PROFESSIONAL INSTAGRAM BUTTON
 ========================================================= */
 
 .social {
 
-    margin-top:
-        40px;
+    margin-top: 40px;
 
 }
 
 
 .social a {
 
-    display:
-        inline-flex;
+    display: inline-flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    width:
-        52px;
+    width: 58px;
 
-    height:
-        52px;
+    height: 58px;
 
     border:
         1px solid
-        rgba(201,154,61,.45);
+        rgba(201,154,61,.55);
 
-    color:
-        var(--gold);
+    color: var(--gold-light);
 
-    text-decoration:
-        none;
+    background:
+        rgba(201,154,61,.03);
 
-    font-size:
-        11px;
+    text-decoration: none;
 
-    letter-spacing:
-        1px;
+    transition: .35s ease;
 
-    transition:
-        .3s;
+    position: relative;
+
+}
+
+
+.social a::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border:
+        1px solid
+        rgba(201,154,61,.15);
+
+    transition: .35s ease;
+
+}
+
+
+.social a svg {
+
+    width: 25px;
+
+    height: 25px;
+
+    position: relative;
+
+    z-index: 2;
+
+    transition: .35s ease;
 
 }
 
@@ -2276,8 +1982,30 @@ section {
     background:
         var(--gold);
 
-    color:
-        #000;
+    color: #000;
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(201,154,61,.20);
+
+}
+
+
+.social a:hover::before {
+
+    border-color:
+        rgba(0,0,0,.25);
+
+}
+
+
+.social a:hover svg {
+
+    transform:
+        scale(1.08);
 
 }
 
@@ -2288,43 +2016,35 @@ section {
 
 footer {
 
-    padding:
-        45px 20px;
+    padding: 45px 20px;
 
-    text-align:
-        center;
+    text-align: center;
 
     border-top:
         1px solid
         #222;
 
-    color:
-        #555;
+    color: #555;
 
-    font-size:
-        11px;
+    font-size: 11px;
 
-    letter-spacing:
-        1px;
+    letter-spacing: 1px;
 
 }
 
 
 .footer-logo {
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
     font-family:
         "Cormorant Garamond",
         Georgia,
         serif;
 
-    font-size:
-        32px;
+    font-size: 32px;
 
-    margin-bottom:
-        12px;
+    margin-bottom: 12px;
 
 }
 
@@ -2335,95 +2055,71 @@ footer {
 
 .modal {
 
-    position:
-        fixed;
+    position: fixed;
 
-    inset:
-        0;
+    inset: 0;
 
-    z-index:
-        99999;
+    z-index: 99999;
 
-    display:
-        none;
+    display: none;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    padding:
-        25px;
+    padding: 25px;
 
     background:
-        rgba(0,0,0,.97);
+        rgba(0,0,0,.96);
 
 }
 
 
 .modal.show {
 
-    display:
-        flex;
+    display: flex;
 
 }
 
 
 .modal img {
 
-    max-width:
-        92vw;
+    max-width: 92vw;
 
-    max-height:
-        88vh;
+    max-height: 88vh;
 
-    object-fit:
-        contain;
+    object-fit: contain;
 
     border:
         1px solid
         var(--gold);
-
-    box-shadow:
-        0 30px 100px
-        rgba(0,0,0,.8);
 
 }
 
 
 .modal-close {
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        20px;
+    top: 20px;
 
-    right:
-        25px;
+    right: 25px;
 
-    width:
-        45px;
+    width: 45px;
 
-    height:
-        45px;
+    height: 45px;
 
     border:
         1px solid
         var(--gold);
 
-    background:
-        #050505;
+    background: #050505;
 
-    color:
-        var(--gold);
+    color: var(--gold);
 
-    font-size:
-        25px;
+    font-size: 25px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
 }
 
@@ -2434,8 +2130,7 @@ footer {
 
 .reveal {
 
-    opacity:
-        0;
+    opacity: 0;
 
     transform:
         translateY(35px);
@@ -2449,8 +2144,7 @@ footer {
 
 .reveal.visible {
 
-    opacity:
-        1;
+    opacity: 1;
 
     transform:
         translateY(0);
@@ -2459,15 +2153,14 @@ footer {
 
 
 /* =========================================================
-   ANIMATIONS
+   HERO ANIMATION
 ========================================================= */
 
 @keyframes heroReveal {
 
     from {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             translateY(30px);
@@ -2476,43 +2169,10 @@ footer {
 
     to {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             translateY(0);
-
-    }
-
-}
-
-
-@keyframes scrollLine {
-
-    0% {
-
-        opacity:
-            0;
-
-        transform:
-            translateY(-8px);
-
-    }
-
-    50% {
-
-        opacity:
-            1;
-
-    }
-
-    100% {
-
-        opacity:
-            0;
-
-        transform:
-            translateY(8px);
 
     }
 
@@ -2523,20 +2183,18 @@ footer {
    TABLET
 ========================================================= */
 
-@media(max-width:1000px) {
+@media(max-width: 1000px) {
 
     nav {
 
-        gap:
-            16px;
+        gap: 16px;
 
     }
 
 
     nav a {
 
-        font-size:
-            9px;
+        font-size: 9px;
 
     }
 
@@ -2545,19 +2203,16 @@ footer {
     .director-grid,
     .film-layout {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
-        gap:
-            50px;
+        gap: 50px;
 
     }
 
 
     .about-number {
 
-        display:
-            none;
+        display: none;
 
     }
 
@@ -2565,7 +2220,7 @@ footer {
     .cast-grid {
 
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
     }
 
@@ -2573,7 +2228,7 @@ footer {
     .location-grid {
 
         grid-template-columns:
-            repeat(3,1fr);
+            repeat(3, 1fr);
 
     }
 
@@ -2581,7 +2236,7 @@ footer {
     .gallery-grid {
 
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
     }
 
@@ -2600,79 +2255,57 @@ footer {
    MOBILE
 ========================================================= */
 
-@media(max-width:700px) {
+@media(max-width: 700px) {
 
     header {
 
-        height:
-            72px;
+        height: 72px;
 
-        padding:
-            0 20px;
+        padding: 0 20px;
 
     }
 
 
     header.scrolled {
 
-        height:
-            65px;
+        height: 65px;
 
     }
 
 
     .logo img {
 
-        width:
-            95px;
-
-    }
-
-
-    header.scrolled .logo img {
-
-        width:
-            90px;
+        width: 95px;
 
     }
 
 
     .menu-toggle {
 
-        display:
-            block;
+        display: block;
 
     }
 
 
     nav {
 
-        position:
-            fixed;
+        position: fixed;
 
-        top:
-            72px;
+        top: 72px;
 
-        left:
-            0;
+        left: 0;
 
-        right:
-            0;
+        right: 0;
 
-        display:
-            flex;
+        display: none;
 
-        flex-direction:
-            column;
+        flex-direction: column;
 
-        align-items:
-            stretch;
+        align-items: stretch;
 
-        gap:
-            0;
+        gap: 0;
 
-        padding:
-            15px 25px 25px;
+        padding: 15px 25px 25px;
 
         background:
             rgba(0,0,0,.98);
@@ -2681,42 +2314,21 @@ footer {
             1px solid
             rgba(201,154,61,.25);
 
-        transform:
-            translateY(-120%);
-
-        opacity:
-            0;
-
-        pointer-events:
-            none;
-
-        transition:
-            .35s ease;
-
     }
 
 
     nav.open {
 
-        transform:
-            translateY(0);
-
-        opacity:
-            1;
-
-        pointer-events:
-            auto;
+        display: flex;
 
     }
 
 
     nav a {
 
-        padding:
-            14px 0;
+        padding: 14px 0;
 
-        font-size:
-            10px;
+        font-size: 10px;
 
         border-bottom:
             1px solid
@@ -2725,32 +2337,20 @@ footer {
     }
 
 
-    .hero {
-
-        min-height:
-            100svh;
-
-    }
-
-
     .hero-content {
 
         padding:
-            120px 20px 90px;
+            125px 20px
+            90px;
 
     }
 
 
     .hero-eyebrow {
 
-        font-size:
-            8px;
+        font-size: 8px;
 
-        letter-spacing:
-            3px;
-
-        margin-bottom:
-            24px;
+        letter-spacing: 4px;
 
     }
 
@@ -2759,24 +2359,21 @@ footer {
 
         font-size:
             clamp(
-                45px,
-                15vw,
-                75px
+                42px,
+                12vw,
+                70px
             );
-
-        letter-spacing:
-            3px;
 
     }
 
 
-    .hero h1 .year {
+    .hero h1 .since {
 
-        font-size:
-            .75em;
+        font-size: 16px;
 
-        letter-spacing:
-            5px;
+        letter-spacing: 4px;
+
+        margin-bottom: 15px;
 
     }
 
@@ -2784,21 +2381,22 @@ footer {
     .hero h1 .company {
 
         font-size:
-            12px;
+            clamp(
+                29px,
+                8vw,
+                45px
+            );
 
-        letter-spacing:
-            2px;
-
-        margin-top:
-            22px;
+        line-height: 1.05;
 
     }
 
 
     .hero-description {
 
-        font-size:
-            12px;
+        font-size: 12px;
+
+        line-height: 1.8;
 
     }
 
@@ -2813,8 +2411,7 @@ footer {
 
     .section-title {
 
-        font-size:
-            48px;
+        font-size: 48px;
 
     }
 
@@ -2822,7 +2419,7 @@ footer {
     .stats {
 
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
     }
 
@@ -2839,15 +2436,14 @@ footer {
     .credits {
 
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
     }
 
 
     .credit:nth-child(2) {
 
-        border-right:
-            none;
+        border-right: none;
 
     }
 
@@ -2865,34 +2461,23 @@ footer {
     .cast-grid {
 
         grid-template-columns:
-            repeat(2,1fr);
-
-    }
-
-
-    .cast-card img {
-
-        height:
-            230px;
-
-        padding:
-            40px 20px;
+            repeat(2, 1fr);
 
     }
 
 
     .cast-card {
 
-        min-height:
-            230px;
+        min-height: 250px;
 
     }
 
 
-    .cast-name {
+    .cast-card img {
 
-        font-size:
-            21px;
+        width: 70%;
+
+        max-height: 150px;
 
     }
 
@@ -2907,16 +2492,14 @@ footer {
 
     .location {
 
-        min-height:
-            150px;
+        min-height: 150px;
 
     }
 
 
     .gallery-grid {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
     }
 
@@ -2924,8 +2507,7 @@ footer {
     .gallery-item:nth-child(1),
     .gallery-item:nth-child(6) {
 
-        grid-row:
-            auto;
+        grid-row: auto;
 
     }
 
@@ -2934,16 +2516,14 @@ footer {
     .gallery-item:nth-child(1) img,
     .gallery-item:nth-child(6) img {
 
-        height:
-            350px;
+        height: 350px;
 
     }
 
 
     .contact-grid {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
     }
 
@@ -2954,68 +2534,55 @@ footer {
    SMALL MOBILE
 ========================================================= */
 
-@media(max-width:420px) {
+@media(max-width: 420px) {
 
     .hero h1 {
 
-        font-size:
-            45px;
+        font-size: 43px;
 
     }
 
 
-    .hero h1 .year {
+    .hero h1 .since {
 
-        letter-spacing:
-            4px;
+        font-size: 14px;
+
+        letter-spacing: 3px;
 
     }
 
 
     .hero h1 .company {
 
-        font-size:
-            11px;
+        font-size: 27px;
 
     }
 
 
     .cast-grid {
 
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .cast-card img {
-
-        height:
-            280px;
+        grid-template-columns: 1fr;
 
     }
 
 
     .cast-card {
 
-        min-height:
-            280px;
+        min-height: 290px;
 
     }
 
 
     .location-grid {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
     }
 
 
     .credits {
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
     }
 
@@ -3025,8 +2592,7 @@ footer {
     .credit:nth-child(3),
     .credit:nth-child(4) {
 
-        border-right:
-            none;
+        border-right: none;
 
         border-top:
             1px solid
@@ -3037,8 +2603,7 @@ footer {
 
     .credit:first-child {
 
-        border-top:
-            none;
+        border-top: none;
 
     }
 
@@ -3058,13 +2623,11 @@ footer {
 
 <header id="siteHeader">
 
-    <a
-        class="logo"
-        href="#anasayfa"
-        aria-label="AFM Yapım Ana Sayfa">
+    <a class="logo"
+       href="#anasayfa">
 
         <img
-            src="./images/afm-logo.jpeg"
+            src="images/afm-logo.jpeg"
             alt="AFM Yapım">
 
     </a>
@@ -3073,8 +2636,7 @@ footer {
     <button
         class="menu-toggle"
         id="menuToggle"
-        aria-label="Menüyü aç"
-        aria-expanded="false">
+        aria-label="Menüyü aç">
 
         <span></span>
         <span></span>
@@ -3085,61 +2647,37 @@ footer {
 
     <nav id="mainNav">
 
-        <a
-            href="#anasayfa"
-            class="active">
-
+        <a href="#anasayfa"
+           class="active">
             ANA SAYFA
-
         </a>
-
 
         <a href="#afm">
-
             AFM YAPIM
-
         </a>
-
 
         <a href="#film">
-
             FİLM
-
         </a>
-
 
         <a href="#oyuncular">
-
             KADRO
-
         </a>
-
 
         <a href="#yonetmen">
-
             YÖNETMEN
-
         </a>
-
 
         <a href="#galeri">
-
             GALERİ
-
         </a>
-
 
         <a href="#basinda">
-
             BASINDA
-
         </a>
 
-
         <a href="#iletisim">
-
             İLETİŞİM
-
         </a>
 
     </nav>
@@ -3155,26 +2693,25 @@ footer {
     class="hero"
     id="anasayfa">
 
-
     <div class="hero-content">
 
-
         <div class="hero-eyebrow">
-
-            AFM YAPIM • SİNEMA • TELEVİZYON • PRODÜKSİYON
-
+            AFM YAPIM • SİNEMA • TELEVİZYON
         </div>
 
 
         <h1>
 
-            <span class="year">
+            <span class="since">
                 1996'DAN BERİ
             </span>
 
+            <span class="company">
+                AFM Yapım
+            </span>
 
             <span class="company">
-                AFM Yapım | Film ve Prodüksiyon Şirketi
+                Film ve Prodüksiyon Şirketi
             </span>
 
         </h1>
@@ -3194,7 +2731,6 @@ footer {
 
         <div class="hero-buttons">
 
-
             <a
                 href="#film"
                 class="btn btn-fill">
@@ -3212,44 +2748,34 @@ footer {
 
             </a>
 
-
         </div>
-
 
     </div>
 
 
     <div class="scroll-indicator">
-
         KEŞFET
-
     </div>
-
 
 </section>
 
 
 <!-- ======================================================
-     ABOUT
+     AFM YAPIM
 ====================================================== -->
 
 <section
     class="section section-dark"
     id="afm">
 
-
     <div class="container">
 
-
         <div class="about-grid reveal">
-
 
             <div>
 
                 <div class="about-number">
-
                     AFM
-
                 </div>
 
             </div>
@@ -3257,20 +2783,14 @@ footer {
 
             <div>
 
-
                 <div class="section-label">
-
                     1996'DAN BERİ
-
                 </div>
 
-
                 <h2 class="section-title">
-
                     Hikâyenin
                     <br>
                     arkasındaki ekip.
-
                 </h2>
 
 
@@ -3278,50 +2798,29 @@ footer {
 
                     <strong>AFM Yapım</strong>;
                     sinema filmi, televizyon ve
-                    yeni nesil prodüksiyon projeleri
-                    geliştiren bir yapım oluşumudur.
-
-                    <br><br>
-
-                    Yaratıcı fikirleri profesyonel
+                    profesyonel prodüksiyon
+                    projeleri geliştiren,
+                    yaratıcı fikirleri güçlü
                     prodüksiyon süreçleriyle
-                    buluşturmayı hedefleyen AFM Yapım,
-                    sinema ve görsel anlatının
-                    farklı alanlarında üretmeye
-                    devam etmektedir.
+                    buluşturmayı hedefleyen
+                    bir yapım oluşumudur.
 
                     <br><br>
 
-                    2026 yılında Alanya'da çekimleri
-                    gerçekleştirilen
+                    2026 yılında Alanya'da
+                    çekimleri gerçekleştirilen
                     <strong>Çapkınlar Oteli</strong>,
                     AFM Yapım'ın öne çıkan
                     sinema projelerinden biridir.
 
                 </p>
 
-
             </div>
-
 
         </div>
 
 
         <div class="stats reveal">
-
-
-            <div class="stat">
-
-                <div class="stat-number">
-                    1996
-                </div>
-
-                <div class="stat-label">
-                    BAŞLANGIÇ
-                </div>
-
-            </div>
-
 
             <div class="stat">
 
@@ -3331,6 +2830,19 @@ footer {
 
                 <div class="stat-label">
                     ÖNE ÇIKAN FİLM
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    2026
+                </div>
+
+                <div class="stat-label">
+                    ÇAPKINLAR OTELİ
                 </div>
 
             </div>
@@ -3361,12 +2873,9 @@ footer {
 
             </div>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -3379,17 +2888,14 @@ footer {
     class="section film"
     id="film">
 
-
     <div class="container">
 
-
         <div class="film-layout reveal">
-
 
             <div class="poster">
 
                 <img
-                    src="./images/capkinlar-oteli-poster.jpg.jpeg"
+                    src="images/capkinlar-oteli-poster.jpg.jpeg"
                     alt="Çapkınlar Oteli film afişi"
                     loading="lazy">
 
@@ -3398,11 +2904,8 @@ footer {
 
             <div>
 
-
                 <div class="film-year">
-
                     AFM YAPIM SUNAR • 2026
-
                 </div>
 
 
@@ -3466,17 +2969,16 @@ footer {
 
                 </a>
 
-
             </div>
-
 
         </div>
 
 
+        <!-- CREDITS -->
+
         <div
             class="credits reveal"
             id="film-detay">
-
 
             <div class="credit">
 
@@ -3529,23 +3031,20 @@ footer {
 
             </div>
 
-
         </div>
 
 
-        <div class="story reveal">
+        <!-- STORY -->
 
+        <div class="story reveal">
 
             <div class="section-label">
                 HİKÂYE
             </div>
 
-
             <h3>
-
                 Otelde başlayan karmaşa,
                 büyüyerek kontrolden çıkar.
-
             </h3>
 
 
@@ -3571,12 +3070,9 @@ footer {
 
             </p>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -3589,35 +3085,25 @@ footer {
     class="section section-dark"
     id="oyuncular">
 
-
     <div class="container">
-
 
         <div class="reveal">
 
-
             <div class="section-label">
-
                 ÇAPKINLAR OTELİ
-
             </div>
 
-
             <h2 class="section-title">
-
                 Oyuncu Kadrosu
-
             </h2>
-
 
             <p class="section-intro">
 
-                Film hakkında yayımlanan haberlerde
-                yer alan oyuncu kadrosundan seçilmiş
-                isimler.
+                Film hakkında 2026 yılında yayımlanan
+                haberlerde yer alan oyuncu kadrosundan
+                seçilmiş isimler.
 
             </p>
-
 
         </div>
 
@@ -3630,9 +3116,8 @@ footer {
             <article class="cast-card reveal">
 
                 <img
-                    src="./images/afm-logo.jpeg"
-                    alt="AFM Yapım - Oktay Solak"
-                    loading="lazy">
+                    src="images/afm-logo.jpeg"
+                    alt="AFM Yapım logosu">
 
                 <div class="cast-info">
 
@@ -3654,9 +3139,8 @@ footer {
             <article class="cast-card reveal">
 
                 <img
-                    src="./images/afm-logo.jpeg"
-                    alt="AFM Yapım - Natalia Onur"
-                    loading="lazy">
+                    src="images/afm-logo.jpeg"
+                    alt="AFM Yapım logosu">
 
                 <div class="cast-info">
 
@@ -3678,9 +3162,8 @@ footer {
             <article class="cast-card reveal">
 
                 <img
-                    src="./images/afm-logo.jpeg"
-                    alt="AFM Yapım - Nehir Cennet Hasdemir"
-                    loading="lazy">
+                    src="images/afm-logo.jpeg"
+                    alt="AFM Yapım logosu">
 
                 <div class="cast-info">
 
@@ -3702,9 +3185,8 @@ footer {
             <article class="cast-card reveal">
 
                 <img
-                    src="./images/afm-logo.jpeg"
-                    alt="AFM Yapım - Zeki Demir"
-                    loading="lazy">
+                    src="images/afm-logo.jpeg"
+                    alt="AFM Yapım logosu">
 
                 <div class="cast-info">
 
@@ -3720,14 +3202,12 @@ footer {
 
             </article>
 
-
         </div>
 
 
         <div
             class="section-intro reveal"
             style="margin-top:40px">
-
 
             Ayrıca film kadrosunda Çağdaş Ozan Yağlı,
             Barış Süer, Bahar Varol, Orhan Opak,
@@ -3737,12 +3217,9 @@ footer {
             İsa Bulut, Zeynep Akman, Mehmet Erol
             ve Daria Üzüm gibi isimler yer alıyor.
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -3755,19 +3232,13 @@ footer {
     class="section locations"
     id="lokasyonlar">
 
-
     <div class="container">
-
 
         <div class="reveal">
 
-
             <div class="section-label">
-
                 ALANYA
-
             </div>
-
 
             <h2 class="section-title">
 
@@ -3776,7 +3247,6 @@ footer {
                 Bir Parçası.
 
             </h2>
-
 
             <p class="section-intro">
 
@@ -3787,7 +3257,6 @@ footer {
                 yer aldı.
 
             </p>
-
 
         </div>
 
@@ -3839,12 +3308,9 @@ footer {
 
             </div>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -3857,32 +3323,25 @@ footer {
     class="section section-dark"
     id="yonetmen">
 
-
     <div class="container">
-
 
         <div class="director-grid reveal">
 
 
             <div class="director-photo">
 
-
                 <img
-                    src="./images/alaattin-durmaz.jpg.jpeg"
+                    src="images/alaattin-durmaz.jpg.jpeg"
                     alt="Alaattin Durmaz"
                     loading="lazy">
-
 
             </div>
 
 
             <div>
 
-
                 <div class="section-label">
-
                     YÖNETMEN
-
                 </div>
 
 
@@ -3896,9 +3355,7 @@ footer {
 
 
                 <div class="director-name">
-
                     YÖNETMEN • YAPIMCI • SİNEMA EMEKÇİSİ
-
                 </div>
 
 
@@ -3992,15 +3449,11 @@ footer {
 
                 </div>
 
-
             </div>
-
 
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -4013,26 +3466,17 @@ footer {
     class="section section-black"
     id="galeri">
 
-
     <div class="container">
-
 
         <div class="reveal">
 
-
             <div class="section-label">
-
                 SETTEN
-
             </div>
 
-
             <h2 class="section-title">
-
                 Kamera Arkası
-
             </h2>
-
 
             <p class="section-intro">
 
@@ -4041,7 +3485,6 @@ footer {
                 atmosferinden seçilmiş görüntüler.
 
             </p>
-
 
         </div>
 
@@ -4054,7 +3497,7 @@ footer {
                 onclick="openModal(0)">
 
                 <img
-                    src="./images/capkinlar-1.jpg.jpeg"
+                    src="images/capkinlar-1.jpg.jpeg"
                     alt="Çapkınlar Oteli setinden kare"
                     loading="lazy">
 
@@ -4066,7 +3509,7 @@ footer {
                 onclick="openModal(1)">
 
                 <img
-                    src="./images/capkinlar-2.jpg.jpeg"
+                    src="images/capkinlar-2.jpg.jpeg"
                     alt="Çapkınlar Oteli set görüntüsü"
                     loading="lazy">
 
@@ -4078,7 +3521,7 @@ footer {
                 onclick="openModal(2)">
 
                 <img
-                    src="./images/capkinlar-3.jpg.jpeg"
+                    src="images/capkinlar-3.jpg.jpeg"
                     alt="Çapkınlar Oteli çekimlerinden"
                     loading="lazy">
 
@@ -4090,7 +3533,7 @@ footer {
                 onclick="openModal(3)">
 
                 <img
-                    src="./images/capkinlar-4.jpg.jpeg"
+                    src="images/capkinlar-4.jpg.jpeg"
                     alt="Çapkınlar Oteli kamera arkası"
                     loading="lazy">
 
@@ -4102,7 +3545,7 @@ footer {
                 onclick="openModal(4)">
 
                 <img
-                    src="./images/capkinlar-5.jpg.jpeg"
+                    src="images/capkinlar-5.jpg.jpeg"
                     alt="Çapkınlar Oteli oyuncuları"
                     loading="lazy">
 
@@ -4114,7 +3557,7 @@ footer {
                 onclick="openModal(5)">
 
                 <img
-                    src="./images/capkinlar-6.jpg.jpeg"
+                    src="images/capkinlar-6.jpg.jpeg"
                     alt="Çapkınlar Oteli seti"
                     loading="lazy">
 
@@ -4126,7 +3569,7 @@ footer {
                 onclick="openModal(6)">
 
                 <img
-                    src="./images/capkinlar-7.jpg.jpeg"
+                    src="images/capkinlar-7.jpg.jpeg"
                     alt="Çapkınlar Oteli Alanya çekimleri"
                     loading="lazy">
 
@@ -4138,18 +3581,15 @@ footer {
                 onclick="openModal(7)">
 
                 <img
-                    src="./images/capkinlar-8.jpg.jpeg"
+                    src="images/capkinlar-8.jpg.jpeg"
                     alt="Çapkınlar Oteli film seti"
                     loading="lazy">
 
             </div>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -4162,26 +3602,17 @@ footer {
     class="section press"
     id="basinda">
 
-
     <div class="container">
-
 
         <div class="reveal">
 
-
             <div class="section-label">
-
                 MEDYA
-
             </div>
 
-
             <h2 class="section-title">
-
                 Basında
-
             </h2>
-
 
             <p class="section-intro">
 
@@ -4191,7 +3622,6 @@ footer {
 
             </p>
 
-
         </div>
 
 
@@ -4200,28 +3630,18 @@ footer {
 
             <article class="press-card reveal">
 
-
                 <div class="press-source">
-
                     ANTALYA EKSPRES
-
                 </div>
-
 
                 <div class="press-title">
-
                     Çapkınlar Oteli
                     çekimlere başladı
-
                 </div>
-
 
                 <div class="press-date">
-
                     21 OCAK 2026
-
                 </div>
-
 
                 <a
                     class="press-link"
@@ -4233,34 +3653,23 @@ footer {
 
                 </a>
 
-
             </article>
 
 
             <article class="press-card reveal">
 
-
                 <div class="press-source">
-
                     ALANYA GAZETESİ
-
                 </div>
-
 
                 <div class="press-title">
-
                     Çapkınlar Oteli
                     Alanya'da başladı
-
                 </div>
-
 
                 <div class="press-date">
-
                     21 OCAK 2026
-
                 </div>
-
 
                 <a
                     class="press-link"
@@ -4272,34 +3681,23 @@ footer {
 
                 </a>
 
-
             </article>
 
 
             <article class="press-card reveal">
 
-
                 <div class="press-source">
-
                     BURSA ANT
-
                 </div>
-
 
                 <div class="press-title">
-
                     Çapkınlar Oteli
                     Alanya'yı keşfetti
-
                 </div>
-
 
                 <div class="press-date">
-
                     26 OCAK 2026
-
                 </div>
-
 
                 <a
                     class="press-link"
@@ -4311,15 +3709,12 @@ footer {
 
                 </a>
 
-
             </article>
 
 
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -4332,19 +3727,13 @@ footer {
     class="section contact"
     id="iletisim">
 
-
     <div class="container">
-
 
         <div class="reveal">
 
-
             <div class="section-label">
-
                 AFM YAPIM
-
             </div>
-
 
             <h2 class="section-title">
 
@@ -4354,17 +3743,14 @@ footer {
 
             </h2>
 
-
-            <p
-                class="section-intro"
-                style="margin-left:auto;margin-right:auto">
+            <p class="section-intro"
+               style="margin-left:auto;margin-right:auto">
 
                 Yeni film, dizi, reklam ve
                 prodüksiyon projeleri için
                 bizimle iletişime geçebilirsiniz.
 
             </p>
-
 
         </div>
 
@@ -4374,91 +3760,64 @@ footer {
 
             <div class="contact-card reveal">
 
-
                 <div class="contact-label">
-
                     TELEFON
-
                 </div>
-
 
                 <div class="contact-value">
 
-
                     <a href="tel:+905376304906">
-
                         +90 537 630 49 06
-
                     </a>
-
 
                     <br><br>
 
-
                     <a href="tel:+905366208951">
-
                         +90 536 620 89 51
-
                     </a>
 
-
                 </div>
-
 
             </div>
 
 
             <div class="contact-card reveal">
 
-
                 <div class="contact-label">
-
                     E-POSTA
-
                 </div>
 
-
                 <div class="contact-value">
-
 
                     <a href="mailto:info@afmyapim.com">
-
                         info@afmyapim.com
-
                     </a>
 
-
                 </div>
-
 
             </div>
 
 
             <div class="contact-card reveal">
 
-
                 <div class="contact-label">
-
                     MERKEZ
-
                 </div>
-
 
                 <div class="contact-value">
-
                     İstanbul
-
                 </div>
 
-
             </div>
-
 
         </div>
 
 
-        <div class="social reveal">
+        <!-- ==================================================
+             INSTAGRAM
+        ================================================== -->
 
+        <div class="social reveal">
 
             <a
                 href="https://www.instagram.com/alaattindurmazofficiall/"
@@ -4466,16 +3825,43 @@ footer {
                 rel="noopener noreferrer"
                 aria-label="Instagram">
 
-                IG
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+
+                    <rect
+                        x="3"
+                        y="3"
+                        width="18"
+                        height="18"
+                        rx="5"
+                        ry="5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"/>
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="4.2"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"/>
+
+                    <circle
+                        cx="17.4"
+                        cy="6.7"
+                        r="1.1"
+                        fill="currentColor"/>
+
+                </svg>
 
             </a>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -4486,46 +3872,30 @@ footer {
 
 <footer>
 
-
     <div class="footer-logo">
-
         AFM YAPIM
-
     </div>
-
 
     <div>
-
-        1996'DAN BERİ
-        •
-        Film
-        •
-        Televizyon
-        •
-        Prodüksiyon
-
+        1996'DAN BERİ • Film • Televizyon • Prodüksiyon
     </div>
-
 
     <br>
 
-
     © 2026 AFM YAPIM
     — Tüm Hakları Saklıdır.
-
 
 </footer>
 
 
 <!-- ======================================================
-     IMAGE MODAL
+     MODAL
 ====================================================== -->
 
 <div
     class="modal"
     id="imageModal"
     onclick="closeModal(event)">
-
 
     <button
         class="modal-close"
@@ -4582,23 +3952,7 @@ const mainNav =
 
 menuToggle.addEventListener("click", () => {
 
-    const isOpen =
-        mainNav.classList.toggle("open");
-
-    menuToggle.classList.toggle(
-        "active",
-        isOpen
-    );
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
-
-    document.body.classList.toggle(
-        "menu-open",
-        isOpen
-    );
+    mainNav.classList.toggle("open");
 
 });
 
@@ -4611,17 +3965,6 @@ document
 
             mainNav.classList.remove("open");
 
-            menuToggle.classList.remove("active");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            document.body.classList.remove(
-                "menu-open"
-            );
-
         });
 
     });
@@ -4632,14 +3975,10 @@ document
 ========================================================= */
 
 const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
+    document.querySelectorAll("section[id]");
 
 const navLinks =
-    document.querySelectorAll(
-        "#mainNav a"
-    );
+    document.querySelectorAll("#mainNav a");
 
 
 const observer =
@@ -4655,27 +3994,20 @@ const observer =
 
                 }
 
-
                 navLinks.forEach(link => {
 
-                    link.classList.remove(
-                        "active"
-                    );
+                    link.classList.remove("active");
 
                 });
-
 
                 const active =
                     document.querySelector(
                         `#mainNav a[href="#${entry.target.id}"]`
                     );
 
-
                 if (active) {
 
-                    active.classList.add(
-                        "active"
-                    );
+                    active.classList.add("active");
 
                 }
 
@@ -4684,9 +4016,7 @@ const observer =
         },
 
         {
-
             threshold: .25
-
         }
 
     );
@@ -4727,9 +4057,7 @@ const revealObserver =
         },
 
         {
-
             threshold: .12
-
         }
 
     );
@@ -4750,35 +4078,31 @@ document
 
 const galleryImages = [
 
-    "./images/capkinlar-1.jpg.jpeg",
+    "images/capkinlar-1.jpg.jpeg",
 
-    "./images/capkinlar-2.jpg.jpeg",
+    "images/capkinlar-2.jpg.jpeg",
 
-    "./images/capkinlar-3.jpg.jpeg",
+    "images/capkinlar-3.jpg.jpeg",
 
-    "./images/capkinlar-4.jpg.jpeg",
+    "images/capkinlar-4.jpg.jpeg",
 
-    "./images/capkinlar-5.jpg.jpeg",
+    "images/capkinlar-5.jpg.jpeg",
 
-    "./images/capkinlar-6.jpg.jpeg",
+    "images/capkinlar-6.jpg.jpeg",
 
-    "./images/capkinlar-7.jpg.jpeg",
+    "images/capkinlar-7.jpg.jpeg",
 
-    "./images/capkinlar-8.jpg.jpeg"
+    "images/capkinlar-8.jpg.jpeg"
 
 ];
 
 
 const modal =
-    document.getElementById(
-        "imageModal"
-    );
+    document.getElementById("imageModal");
 
 
 const modalImage =
-    document.getElementById(
-        "modalImage"
-    );
+    document.getElementById("modalImage");
 
 
 function openModal(index) {
@@ -4786,9 +4110,7 @@ function openModal(index) {
     modalImage.src =
         galleryImages[index];
 
-    modal.classList.add(
-        "show"
-    );
+    modal.classList.add("show");
 
     document.body.style.overflow =
         "hidden";
@@ -4799,21 +4121,13 @@ function openModal(index) {
 function closeModal(event) {
 
     if (
-
         event.target === modal ||
-
-        event.target.classList.contains(
-            "modal-close"
-        )
-
+        event.target.classList.contains("modal-close")
     ) {
 
-        modal.classList.remove(
-            "show"
-        );
+        modal.classList.remove("show");
 
-        document.body.style.overflow =
-            "";
+        document.body.style.overflow = "";
 
     }
 
@@ -4830,12 +4144,9 @@ document.addEventListener(
 
         if (event.key === "Escape") {
 
-            modal.classList.remove(
-                "show"
-            );
+            modal.classList.remove("show");
 
-            document.body.style.overflow =
-                "";
+            document.body.style.overflow = "";
 
         }
 
@@ -4867,22 +4178,6 @@ document
         );
 
     });
-
-
-/* =========================================================
-   PAGE LOAD
-========================================================= */
-
-window.addEventListener(
-    "load",
-    () => {
-
-        document.body.classList.add(
-            "page-loaded"
-        );
-
-    }
-);
 
 </script>
 
