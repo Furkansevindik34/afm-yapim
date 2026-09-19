@@ -5112,5 +5112,60 @@
 
     </script>
 
+<hr>
+
+<h2>Site Yazıları</h2>
+
+<label>Ana Başlık</label>
+<input id="home_title">
+
+<label>Hakkımızda</label>
+<textarea id="about_text"></textarea>
+
+<label>İletişim</label>
+<input id="contact">
+
+<button onclick="saveSettings()">Yazıları Kaydet</button>
+
+<script>
+async function loadSettings(){
+  const {data,error}=await supabaseClient
+    .from("site_settings")
+    .select("*");
+
+  if(data){
+    data.forEach(item=>{
+      if(item.key==="home_title")
+        home_title.value=item.value;
+
+      if(item.key==="about_text")
+        about_text.value=item.value;
+
+      if(item.key==="contact")
+        contact.value=item.value;
+    });
+  }
+}
+
+async function saveSettings(){
+
+const items=[
+ {key:"home_title",value:home_title.value},
+ {key:"about_text",value:about_text.value},
+ {key:"contact",value:contact.value}
+];
+
+for(const item of items){
+ await supabaseClient
+ .from("site_settings")
+ .update({value:item.value})
+ .eq("key",item.key);
+}
+
+alert("Kaydedildi");
+}
+
+loadSettings();
+</script>
 </body>
 </html>
